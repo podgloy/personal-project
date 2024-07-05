@@ -1,15 +1,3 @@
-"use client";
-
-// import React from 'react';
-// import FirstPage from "@/components/FirstPage";
-
-// export default function Home() {
-//   return (
-//     <FirstPage/>
-//   );
-// }
-
-
 import React from 'react';
 
 export default function FirstPage() {
