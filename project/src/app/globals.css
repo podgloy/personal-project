@@ -6,6 +6,11 @@ body {
   background: rgb(22, 22, 22);
   font-family: 'Epilogue', sans-serif;
 }
+
+.cover-font {
+  font-family: 'CoveredByYourGrace', latin;
+}
+
 img {
   max-width: none !important;
 }

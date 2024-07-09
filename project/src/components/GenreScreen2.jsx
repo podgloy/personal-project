@@ -58,13 +58,14 @@ export default function GenreScreen2() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1.4}
-        spaceBetween={20}
+        slidesPerView={1.3}
+        spaceBetween={35}
         coverflowEffect={{
-          rotate: 30,
+          rotate: 50,
           stretch: 0,
           depth: 200,
           modifier: 1,
+          scale: 1.3,
           slideShadows: true,
         }}
         pagination={true}

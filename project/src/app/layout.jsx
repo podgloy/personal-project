@@ -1,6 +1,9 @@
 import { Epilogue } from "next/font/google";
 
-const EpilogueFont = Epilogue({ subsets: ["latin"], weight: ["100", "300", "400", "700"] });
+const EpilogueFont = Epilogue({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700"],
+});
 
 import "./globals.css";
 

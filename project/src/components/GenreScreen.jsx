@@ -106,13 +106,14 @@ export default function GenreScreen() {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={1.4}
-          spaceBetween={20}
+          slidesPerView={1.3}
+          spaceBetween={35}
           coverflowEffect={{
-            rotate: 30,
+            rotate: 50,
             stretch: 0,
             depth: 200,
             modifier: 1,
+            scale: 1.3,
             slideShadows: true,
           }}
           pagination={true}
@@ -126,6 +127,7 @@ export default function GenreScreen() {
           ))}
         </Swiper>
 
+        {/* navigation */}
         <div className="p-5 flex flex-row justify-end">
           <span className="font-medium text-white pr-3"> next </span>
           <img className="w-8 " src="/arrow2.svg" />
