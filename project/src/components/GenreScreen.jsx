@@ -38,18 +38,31 @@ export default function GenreScreen() {
     gsap.registerPlugin(ScrollToPlugin);
 
     // animate
-
-    // vinyl animate
-    gsap.to("#vinyl-img", {
-      rotate: 180,
-      duration: 2,
+    gsap.to("#genre-screen-wrapper", {
+      // yPercent: -200,
+      position: "sticky",
+      top: 0,
+      ease: "expo.out",
+      duration: 0.1,
       scrollTrigger: {
-        trigger: "",
+        trigger: "#genre-screen-wrapper",
         start: "top top",
-        end: "bottom top",
+        // end: 0,
         scrub: 1,
       },
     });
+
+    // vinyl animate
+    // gsap.to("#vinyl-img", {
+    //   rotate: 180,
+    //   duration: 2,
+    //   scrollTrigger: {
+    //     trigger: "",
+    //     start: "top top",
+    //     end: "bottom top",
+    //     scrub: 1,
+    //   },
+    // });
 
     useEffect(() => {
       initLenis();
@@ -68,28 +81,23 @@ export default function GenreScreen() {
 
           <div className="pt-9">
             <h1 className="text-white opacity-50 text-4xl font-bold">
-              {" "}
-              If your life{" "}
+              If your life
             </h1>
             <h1 className="text-white opacity-50 text-4xl font-bold">
-              {" "}
-              were a movie,{" "}
+              were a movie,
             </h1>
           </div>
 
           {/* 2nd paragraph */}
           <div className="pt-5">
             <h1 className="text-white opacity-60 text-3xl font-bold text-right">
-              {" "}
-              What{" "}
+              What
             </h1>
             <h1 className="pt-3 text-[#DBFC3B] text-6xl font-bold text-right">
-              {" "}
-              GENRE{" "}
+              GENRE
             </h1>
             <h1 className="text-white opacity-60 text-3xl font-bold text-right">
-              {" "}
-              would it belong to?{" "}
+              would it belong to?
             </h1>
           </div>
         </div>

@@ -23,21 +23,6 @@ export default function WelcomeScreen() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
 
-    ScrollTrigger.create({
-      start: "top-=100px",
-      onEnter: () => {
-        gsap.to(window, {
-          duration: 1,
-          scrollTo: {
-            y: "#genre-screen-wrapper",
-            offsetY: 0,
-          },
-          ease: "power2.inOut",
-        });
-      },
-      once: true,
-    });
-
     // animate
 
     // vinyl animate
@@ -88,19 +73,20 @@ export default function WelcomeScreen() {
     // });
 
     // genre screen animate
-    gsap.to("#genre-screen-wrapper", {
-      // yPercent: -200,
-      position: "sticky",
-      top: 0,
-      ease: "expo.out",
-      duration: 0.1,
-      scrollTrigger: {
-        trigger: "#genre-screen-wrapper",
-        start: "top top",
-        // end: 0,
-        scrub: 1,
-      },
-    });
+    // gsap.to("#genre-screen-wrapper", {
+    //   // yPercent: -200,
+    //   position: "sticky",
+    //   top: 0,
+    //   ease: "expo.out",
+    //   duration: 0.1,
+    //   scrollTrigger: {
+    //     trigger: "#genre-screen-wrapper",
+    //     start: "top top",
+    //     // end: 0,
+    //     scrub: 1,
+    //   },
+    // });
+
     // gsap.to(window, {
     //   duration: 1,
     //   ease: "expo.out",
