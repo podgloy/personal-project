@@ -4,14 +4,14 @@ export default function FontScreen() {
   return (
     <div className="h-screen bg-zinc-900 flex flex-col pt-14">
       {/* header */}
-      <div className="">
-        <div className="p-5 flex flex-row justify-between">
+      <div className="pl-5 pr-5">
+        <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
           <img src="/4dot.svg" />
         </div>
 
         {/* question */}
-        <div className="pt-9 pr-5 pl-5">
+        <div className="pt-9">
           <h2 className="text-white opacity-60 text-3xl font-bold text-right">
             What
           </h2>
@@ -26,11 +26,10 @@ export default function FontScreen() {
         </div>
 
         {/* the end screen */}
-        <div className="m-5 mt-9 h-60 bg-white rounded-md" />
-
-        {/* scroller */}
-        <img className="mt-8 flex flex-col w-full" src="/scroller.png" />
+        <div className=" mt-9 h-60 bg-white rounded-md" />
       </div>
+      {/* scroller */}
+      <img className="mt-8 flex flex-col w-full" src="/scroller.png" />
 
       {/* navigation */}
       <div className="p-5 flex flex-row justify-end">

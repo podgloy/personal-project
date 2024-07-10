@@ -12,16 +12,20 @@ import GenreScreen2 from "@/components/GenreScreen2";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import FontScreen from "@/components/FontScreen";
 import TaglineScreen from "@/components/TaglineScreen";
+import LoadingStage from "@/components/LoadingStage";
+import ColorScreen from "@/components/ColorScreen";
 
 export default function Home() {
   return (
     <main className="h-screen text-white bg-zinc-900">
-      <WelcomeScreen />
+      {/* <WelcomeScreen /> */}
       {/* <div className="blackBG bg-zinc-900 w-full h-[80vh]"></div> */}
-      <GenreScreen />
-      <GenreScreen2 />
-      <FontScreen />
+      {/* <GenreScreen />
+      <GenreScreen2 /> */}
+      <ColorScreen />
+      {/* <FontScreen />
       <TaglineScreen />
+      <LoadingStage /> */}
     </main>
   );
 }

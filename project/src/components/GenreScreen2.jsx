@@ -21,7 +21,7 @@ export default function GenreScreen2() {
       className="h-screen bg-zinc-900 flex flex-col pt-14 z-10 relative"
     >
       <div className="question pl-5 pr-5">
-        <div className="p-5 flex flex-row justify-between">
+        <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
           <img src="/4dot.svg" />
         </div>
@@ -43,7 +43,10 @@ export default function GenreScreen2() {
             {" "}
             What{" "}
           </h1>
-          <h1 className="pt-3 text-[#DBFC3B] text-6xl font-bold text-right">
+          <h1
+            id="covered-by-your-grace-regular"
+            className="pt-3 text-[#DBFC3B] text-6xl font-bold text-right"
+          >
             {" "}
             GENRE{" "}
           </h1>
