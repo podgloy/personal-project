@@ -9,9 +9,12 @@ import "swiper/css/effect-cards";
 // import required modules
 import { EffectCards } from "swiper/modules";
 
-export default function ColorScreen() {
+export default function ColorScreen({ className, id, onBack, onNext }) {
   return (
-    <div className="h-screen bg-zinc-900 flex flex-col pt-14 z-10 relative">
+    <div
+      id={id}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-14 ${className}`}
+    >
       <div className="question pl-5 pr-5">
         <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
@@ -61,10 +64,10 @@ export default function ColorScreen() {
       </div>
 
       {/* navigation */}
-      <div className="p-5 flex flex-row justify-end">
+      <button onClick={onNext} className="p-5 flex flex-row justify-end">
         <span className="font-medium text-white pr-3"> next </span>
         <img className="w-8 " src="/arrow2.svg" />
-      </div>
+      </button>
     </div>
   );
 }

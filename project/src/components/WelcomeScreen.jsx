@@ -3,28 +3,8 @@ import gsap from "gsap";
 import { useEffect } from "react";
 
 export default function WelcomeScreen() {
-<<<<<<< HEAD
   // init animateGsap function
   const animateGsap = () => {
-=======
-  register();
-  const initLenis = () => {
-    const lenis = new Lenis({
-      duration: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-
-    // animate
-
->>>>>>> 745e455c300219704c2a8ce865bb4152ae1b815e
     // vinyl animate
     gsap.to("#vinyl-img", {
       rotate: 180,
@@ -55,57 +35,11 @@ export default function WelcomeScreen() {
       duration: 3,
       scrollTrigger: {
         trigger: "#welcome-screen-wrapper",
-<<<<<<< HEAD
         start: "top top",
         end: "bottom top",
         scrub: 1,
       },
     });
-=======
-        start: "bottom bottom",
-        end: "bottom",
-        scrub: 1,
-      },
-    });
-
-    // gsap.to("#blackBG", {
-    //   yPercent: -200,
-    //   scrollTrigger: {
-    //     trigger: "#blackBG",
-    //     start: 200,
-    //     end: "bottom bottom",
-    //     scrub: 1,
-    //   },
-    // });
-
-    // genre screen animate
-    // gsap.to("#genre-screen-wrapper", {
-    //   // yPercent: -200,
-    //   position: "sticky",
-    //   top: 0,
-    //   ease: "expo.out",
-    //   duration: 0.1,
-    //   scrollTrigger: {
-    //     trigger: "#genre-screen-wrapper",
-    //     start: "top top",
-    //     // end: 0,
-    //     scrub: 1,
-    //   },
-    // });
-
-    // gsap.to(window, {
-    //   duration: 1,
-    //   ease: "expo.out",
-    //   scrollTo: "#genre-screen-wrapper",
-
-    // scrollTrigger: {
-    //   trigger: "#genre-screen-wrapper",
-    //   start: "top top",
-    //   // end: 0,
-    //   scrub: 1,
-    // },
-    // });
->>>>>>> 745e455c300219704c2a8ce865bb4152ae1b815e
   };
   // call init animateGsap when page loaded
   useEffect(() => {
