@@ -4,6 +4,18 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import LenisProvider from "@/components/LenisProvider";
 import { useState } from "react";
 import { useLenis } from "lenis/react";
+import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { register } from "swiper/element/bundle";
+import { useEffect } from "react";
+import { ScrollToPlugin } from "gsap/all";
+import GenreScreen from "@/components/GenreScreen";
+import GenreScreen2 from "@/components/GenreScreen2";
+import FontScreen from "@/components/FontScreen";
+import TaglineScreen from "@/components/TaglineScreen";
+import LoadingStage from "@/components/LoadingStage";
+import ColorScreen from "@/components/ColorScreen";
 
 export default function Home() {
   // state for show welcome screen
@@ -29,6 +41,7 @@ export default function Home() {
       <LenisProvider>
         {isShowWelcomeScreen ? <WelcomeScreen /> : null}
         <QuizSection />
+        <ColorScreen />
       </LenisProvider>
     </main>
   );
