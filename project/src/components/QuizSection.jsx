@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function QuizSection() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
-  const quizComponents = [GenreScreen, GenreScreen];
+  const quizComponents = [GenreScreen, GenreScreen, GenreScreen];
   function next() {
     if (currentQuiz === quizComponents.length - 1) return;
     gsap.fromTo(
@@ -71,9 +71,7 @@ export default function QuizSection() {
       {quizComponents.map((Quiz, i) => (
         <Quiz
           key={i}
-          className={`bg-green-red-500 ${
-            currentQuiz === i ? "z-10" : "pointer-events-none z-0"
-          }`}
+          className={currentQuiz === i ? "z-10" : "pointer-events-none z-0"}
           id={`quiz-${i}`}
           onNext={() => next()}
           onBack={() => back()}

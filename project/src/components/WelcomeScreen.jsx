@@ -46,11 +46,19 @@ export default function WelcomeScreen() {
     animateGsap();
   }, []);
 
+  // function triggerVinyl() {
+  //   gsap.to("#vinyl-img", {
+  //     scale: 1.5,
+  //     duration: 1,
+  //   });
+  // }
+
   return (
     <div
       id="welcome-screen-wrapper"
       className="p-6 pt-16 relative h-screen flex flex-col"
     >
+      {/* <button onClick={() => triggerVinyl()}>Click here</button> */}
       {/* logo */}
       <div className="down-ele h-9 w-16 bg-white" />
       {/* welcome message */}
