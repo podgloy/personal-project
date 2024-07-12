@@ -12,7 +12,7 @@ export default function Home() {
   const lenis = useLenis(
     (e) => {
       if (e.progress > 0.2 && isShowWelcomeScreen) {
-        // scroll to #scrren2
+        // scroll to #screen2
         lenis.scrollTo("#quiz-section-wrapper", {
           lerp: 0.06,
           lock: true,

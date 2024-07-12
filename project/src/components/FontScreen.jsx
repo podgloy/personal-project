@@ -1,10 +1,13 @@
 import React from "react";
 
-export default function FontScreen() {
+export default function FontScreen({ className, id, onBack, onNext }) {
   return (
-    <div className="h-screen bg-zinc-900 flex flex-col pt-14">
+    <div
+      id={id}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16 ${className}`}
+    >
       {/* header */}
-      <div className="pl-5 pr-5">
+      <div className="px-5">
         <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
           <img src="/4dot.svg" />
@@ -15,7 +18,7 @@ export default function FontScreen() {
           <h2 className="text-white opacity-60 text-3xl font-bold text-right">
             What
           </h2>
-          <h1 className="pt-3 text-[#FFFC2E] text-6xl font-bold text-right">
+          <h1 className="covered-by-your-grace-regular pt-3 text-[#FFFC2E] text-7xl font-bold text-right">
             FONT
           </h1>
           <h2 className="text-white opacity-60 text-3xl font-bold text-right">
@@ -31,10 +34,16 @@ export default function FontScreen() {
       {/* scroller */}
       <img className="mt-8 flex flex-col w-full" src="/scroller.png" />
 
-      {/* navigation */}
-      <div className="p-5 flex flex-row justify-end">
-        <span className="font-medium text-white pr-3"> next </span>
-        <img className="w-8 " src="/arrow2.svg" />
+      {/* button */}
+      <div className="flex justify-between">
+        <button onClick={onBack} className="p-5 flex space-x-3 items-center">
+          <img className="w-8 rotate-180" src="/arrow2.svg" />
+          <span className="font-medium text-white"> back </span>
+        </button>
+        <button onClick={onNext} className="p-5 flex space-x-3 items-center">
+          <span className="font-medium text-white"> next </span>
+          <img className="w-8 " src="/arrow2.svg" />
+        </button>
       </div>
     </div>
   );

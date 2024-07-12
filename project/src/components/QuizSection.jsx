@@ -3,10 +3,19 @@ import GenreScreen from "@/components/GenreScreen";
 import gsap from "gsap";
 import { useState } from "react";
 import ColorScreen from "./ColorScreen";
+import FontScreen from "./FontScreen";
+import TaglineScreen from "./TaglineScreen";
+import LoadingStage from "./LoadingStage";
 
 export default function QuizSection() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
-  const quizComponents = [GenreScreen, ColorScreen, GenreScreen];
+  const quizComponents = [
+    GenreScreen,
+    ColorScreen,
+    FontScreen,
+    TaglineScreen,
+    LoadingStage,
+  ];
   function next() {
     if (currentQuiz === quizComponents.length - 1) return;
     gsap.fromTo(

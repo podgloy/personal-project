@@ -20,13 +20,14 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
       id={id}
       className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16 ${className}`}
     >
-      {/* question */}
-      <div className="question pl-5 pr-5">
-        <div className="p-5 flex flex-row justify-between">
+      {/* header */}
+      <div className="px-5">
+        <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
           <img src="/4dot.svg" />
         </div>
 
+        {/* question */}
         <div className="pt-9">
           <h1 className="text-white opacity-50 text-4xl font-bold">
             {" "}
@@ -44,7 +45,7 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
             {" "}
             What{" "}
           </h1>
-          <h1 className="pt-3 text-[#DBFC3B] text-6xl font-bold text-right covered-by-your-grace-regular">
+          <h1 className="covered-by-your-grace-regular pt-3 text-[#DBFC3B] text-7xl font-bold text-right">
             {" "}
             GENRE{" "}
           </h1>
@@ -54,6 +55,7 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
           </h1>
         </div>
       </div>
+
       {/* swiper */}
       <Swiper
         effect={"coverflow"}
@@ -74,18 +76,15 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
       >
         {images.map((image, i) => (
           <SwiperSlide key={`slide-${i}`}>
-            <img className="w-full h-full" src={image} />
+            <img className="h-full w-full" src={image} />
           </SwiperSlide>
         ))}
       </Swiper>
+
       {/* button */}
-      <div className="flex justify-between">
-        <button onClick={onBack} className="p-5 flex space-x-3 items-center">
-          <img className="w-8 rotate-180" src="/arrow2.svg" />
-          <span className="font-medium text-white"> back </span>
-        </button>
+      <div className="absolute bottom-8 right-0">
         <button onClick={onNext} className="p-5 flex space-x-3 items-center">
-          <span className="font-medium text-white"> next </span>
+          <span className="font-bold text-white"> next </span>
           <img className="w-8 " src="/arrow2.svg" />
         </button>
       </div>

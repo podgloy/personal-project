@@ -13,14 +13,16 @@ export default function ColorScreen({ className, id, onBack, onNext }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-14 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16 ${className}`}
     >
-      <div className="question pl-5 pr-5">
+      {/* header */}
+      <div className="px-5">
         <div className="py-5 flex flex-row justify-between">
           <h1 className="text-white text-m font-bold"> Logo </h1>
           <img src="/4dot.svg" />
         </div>
 
+        {/* question */}
         <div className="pt-9">
           <h1 className="text-white opacity-50 text-4xl font-bold">
             {" "}
@@ -37,8 +39,8 @@ export default function ColorScreen({ className, id, onBack, onNext }) {
           <h1 className="text-white opacity-60 text-3xl font-bold text-right">
             What
           </h1>
-          <h1 className="pt-3 text-[#DBFC3B] text-6xl font-bold text-right">
-            GENRE
+          <h1 className="covered-by-your-grace-regular pt-3 text-[#F00F2D] text-7xl font-bold text-right">
+            COLOR
           </h1>
           <h1 className="text-white opacity-60 text-3xl font-bold text-right">
             would it belong to?
@@ -63,11 +65,17 @@ export default function ColorScreen({ className, id, onBack, onNext }) {
         </Swiper>
       </div>
 
-      {/* navigation */}
-      <button onClick={onNext} className="p-5 flex flex-row justify-end">
-        <span className="font-medium text-white pr-3"> next </span>
-        <img className="w-8 " src="/arrow2.svg" />
-      </button>
+      {/* button */}
+      <div className="flex justify-between">
+        <button onClick={onBack} className="p-5 flex space-x-3 items-center">
+          <img className="w-8 rotate-180" src="/arrow2.svg" />
+          <span className="font-medium text-white"> back </span>
+        </button>
+        <button onClick={onNext} className="p-5 flex space-x-3 items-center">
+          <span className="font-medium text-white"> next </span>
+          <img className="w-8 " src="/arrow2.svg" />
+        </button>
+      </div>
     </div>
   );
 }
