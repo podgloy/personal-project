@@ -4,15 +4,29 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { useState } from "react";
 
-export default function GenreScreen({ className, id, onBack, onNext }) {
+export default function GenreScreen({
+  className,
+  id,
+  onBack,
+  onNext,
+  onSelect,
+}) {
+  const [swiper, setSwiper] = useState(null);
+  function getImageValue() {
+    const activeIndex = swiper.activeIndex;
+    const selectedImage = images[activeIndex];
+    onSelect("genre", selectedImage.answer);
+  }
+
   const images = [
-    "/romance.png",
-    "/comedy.png",
-    "/romance.png",
-    "/comedy.png",
-    "/romance.png",
-    "/comedy.png",
+    { url: "/romance.png", answer: ["Warm", "intimate", "emotional"] },
+    { url: "/comedy.png", answer: ["fun", "homurous", "playful"] },
+    { url: "/romance.png", answer: ["Warm", "intimate", "emotional"] },
+    { url: "/comedy.png", answer: ["fun", "homurous", "playful"] },
+    { url: "/romance.png", answer: ["Warm", "intimate", "emotional"] },
+    { url: "/comedy.png", answer: ["fun", "homurous", "playful"] },
   ];
 
   return (
@@ -55,9 +69,10 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
           </h1>
         </div>
       </div>
-
       {/* swiper */}
       <Swiper
+        onSwiper={setSwiper}
+        onSlideChange={() => getImageValue()}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -76,7 +91,7 @@ export default function GenreScreen({ className, id, onBack, onNext }) {
       >
         {images.map((image, i) => (
           <SwiperSlide key={`slide-${i}`}>
-            <img className="h-full w-full" src={image} />
+            <img className="h-full w-full" src={image.url} />
           </SwiperSlide>
         ))}
       </Swiper>

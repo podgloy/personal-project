@@ -9,6 +9,7 @@ import LoadingStage from "./LoadingStage";
 
 export default function QuizSection() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
+  const [answers, setAnswers] = useState({});
   const quizComponents = [
     GenreScreen,
     ColorScreen,
@@ -72,6 +73,11 @@ export default function QuizSection() {
     );
     setCurrentQuiz(currentQuiz - 1);
   }
+  function onSelect(name, val) {
+    answers[name] = val;
+    setAnswers(answers);
+    console.log(answers, "answers");
+  }
 
   return (
     <div
@@ -85,6 +91,7 @@ export default function QuizSection() {
           id={`quiz-${i}`}
           onNext={() => next()}
           onBack={() => back()}
+          onSelect={(name, val) => onSelect(name, val)}
         />
       ))}
     </div>
