@@ -12,3 +12,17 @@ export const covered = localFont({
     },
   ],
 });
+
+
+export const dillan = localFont({
+  variable: "--font-dillan",
+  src: [
+    {
+      path: "../../public/font/made_dillan/MADE_Dillan.otf",
+      weight: "400", // Range of weights for variable fonts
+      style: "normal",
+      preload: true, // Preload the font for better performance
+      variable: true, // Indicate that this is a variable font
+    },
+  ],
+});

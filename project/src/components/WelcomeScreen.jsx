@@ -56,13 +56,13 @@ export default function WelcomeScreen() {
   return (
     <div
       id="welcome-screen-wrapper"
-      className="p-6 pt-16 relative h-screen flex flex-col"
+      className="p-6 pt-16 relative h-screen flex flex-col bg-[#155FCB]"
     >
       {/* <button onClick={() => triggerVinyl()}>Click here</button> */}
       {/* logo */}
       <div className="down-ele h-9 w-16 bg-white" />
       {/* welcome message */}
-      <h1 className="down-ele font-bold text-4xl text-white mt-10 ml-6 relative z-10">
+      <h1 className="down-ele font-bold text-4xl text-[#FE65C5] mt-10 ml-6 relative z-10">
         soundtrack of life
       </h1>
       {/* vinyl image */}
@@ -70,7 +70,7 @@ export default function WelcomeScreen() {
         <img
           id="vinyl-img"
           className="absolute top-0 -left-[85vw] size-[160vw] object-contain"
-          src="/vinyl2.png"
+          src="/vinyl.png"
         />
       </div>
       {/* icon */}

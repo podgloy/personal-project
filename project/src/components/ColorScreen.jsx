@@ -1,19 +1,32 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css/pagination";
+import { useState } from "react";
 
-// import required modules
 import { EffectCards } from "swiper/modules";
 
+const images = [
+  { url: "/color/blue.svg", answer: ["Warm", "intimate", "emotional"] },
+  { url: "/color/orange.svg", answer: ["fun", "homurous", "playful"] },
+  { url: "/color/pink.svg", answer: ["Warm", "intimate", "emotional"] },
+  { url: "/color/purple.svg", answer: ["fun", "homurous", "playful"] },
+  { url: "/color/red.svg", answer: ["Warm", "intimate", "emotional"] },
+  { url: "/color/yellow.svg", answer: ["fun", "homurous", "playful"] },
+];
+
 export default function ColorScreen({ className, id, onBack, onNext }) {
+  // const [swiper, setSwiper] = useState(null);
+  // function getImageValue() {
+  //   const activeIndex = swiper.activeIndex;
+  //   const selectedImage = images[activeIndex];
+  //   onSelect("color", selectedImage.answer);
+  // }
+
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#F45E2E] flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
@@ -48,20 +61,18 @@ export default function ColorScreen({ className, id, onBack, onNext }) {
         </div>
 
         <Swiper
+          // onSwiper={setSwiper}
+          // onSlideChange={() => getImageValue()}
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          className="mySwiper mt-16"
+          className="mySwiper mt-12"
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+          {images.map((image, i) => (
+            <SwiperSlide key={`slide-${i}`}>
+              <img className="!h-full !w-full" src={image.url} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
