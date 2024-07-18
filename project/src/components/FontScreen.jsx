@@ -13,7 +13,7 @@ export default function FontScreen({ className, id, onBack, onNext }) {
         </div>
 
         {/* question */}
-        <div className="pt-9">
+        <div className="pt-5">
           <h2 className="text-white opacity-60 text-3xl font-bold text-right">
             What
           </h2>
@@ -34,16 +34,27 @@ export default function FontScreen({ className, id, onBack, onNext }) {
       <img className="mt-8 flex flex-col w-full" src="/scroller.png" />
 
       {/* button */}
-      <div className="flex justify-between">
-        <button onClick={onBack} className="p-5 flex space-x-3 items-center">
+      <div className="">
+        <button
+          onClick={onBack}
+          className="absolute p-5 flex space-x-3 items-center"
+        >
           <img className="w-8 rotate-180" src="/arrow2.svg" />
           <span className="font-medium text-white"> back </span>
         </button>
-        <div className="absolute bottom-6 right-0">
-          <button onClick={onNext} className="p-5 flex space-x-3 items-center">
-            <div className="border-2 border-white rounded-full w-11 h-11" />
-            <img className="absolute left-4" src="/arrow8.svg" />
-          </button>
+
+        {/* footer & buttons */}
+        <div className="flex justify-between">
+          <img className="absolute left-5 bottom-16" src="dots.svg" />
+          <div className="absolute bottom-6 right-0">
+            <button
+              onClick={onNext}
+              className="p-5 flex space-x-3 items-center"
+            >
+              <div className="border-2 border-white rounded-full w-11 h-11" />
+              <img className="absolute left-4" src="/arrow8.svg" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

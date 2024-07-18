@@ -48,7 +48,7 @@ export default function ColorScreen({
         </div>
 
         {/* question1 */}
-        <div className="pt-9">
+        <div className="pt-5">
           <h1 className="text-[#FFE679] text-3xl font-bold">Which</h1>
           <h1 className="covered-by-your-grace-regular pt-3 text-[#77E6FF] text-7xl font-bold">
             COLOR
@@ -85,7 +85,7 @@ export default function ColorScreen({
       </div>
 
       {/* button */}
-      <div className="flex justify-between">
+      <div className="">
         <button
           onClick={onBack}
           className="absolute p-5 flex space-x-3 items-center"
@@ -96,7 +96,7 @@ export default function ColorScreen({
 
         {/* footer & buttons */}
         <div className="flex justify-between">
-          <img className="pl-5 pt-24" src="dots.svg" />
+          <img className="absolute left-5 bottom-16" src="dots.svg" />
           <div className="absolute bottom-6 right-0">
             <button
               onClick={onNext}

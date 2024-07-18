@@ -4,7 +4,7 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#F753A9] flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
@@ -13,11 +13,11 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
         </div>
 
         {/* question */}
-        <div className="pt-9">
-          <p className="text-white text-3xl font-bold">What word best</p>
-          <p className="text-white text-3xl font-bold">describe your</p>
-          <p className="text-white text-3xl font-bold">life as a</p>
-          <h1 className="covered-by-your-grace-regular pt-8 text-[#00CCFD] text-7xl font-bold text-right">
+        <div className="pt-5">
+          <p className="text-[#F9E7FF] text-3xl font-bold">What word best</p>
+          <p className="text-[#F9E7FF] text-3xl font-bold">describe your</p>
+          <p className="text-[#F9E7FF] text-3xl font-bold">life as a</p>
+          <h1 className="covered-by-your-grace-regular pt-8 text-[#B5FF6A] text-7xl font-bold text-right">
             TAGLINE
           </h1>
         </div>
@@ -43,17 +43,29 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
           </div>
         </div>
       </div>
+
       {/* button */}
-      <div className="flex justify-between">
-        <button onClick={onBack} className="p-5 flex space-x-3 items-center">
+      <div className="">
+        <button
+          onClick={onBack}
+          className="absolute p-5 flex space-x-3 items-center"
+        >
           <img className="w-8 rotate-180" src="/arrow2.svg" />
           <span className="font-medium text-white"> back </span>
         </button>
-        <div className="absolute bottom-6 right-0">
-          <button onClick={onNext} className="p-5 flex space-x-3 items-center">
-            <div className="border-2 border-white rounded-full w-11 h-11" />
-            <img className="absolute left-4" src="/arrow8.svg" />
-          </button>
+
+        {/* footer & buttons */}
+        <div className="flex justify-between">
+          <img className="absolute left-5 bottom-16" src="dots.svg" />
+          <div className="absolute bottom-6 right-0">
+            <button
+              onClick={onNext}
+              className="p-5 flex space-x-3 items-center"
+            >
+              <div className="border-2 border-white rounded-full w-11 h-11" />
+              <img className="absolute left-4" src="/arrow8.svg" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

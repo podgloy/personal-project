@@ -61,15 +61,23 @@ export default function WelcomeScreen() {
       {/* <button onClick={() => triggerVinyl()}>Click here</button> */}
       {/* logo */}
       <div className="down-ele h-9 w-16 bg-white" />
+
       {/* welcome message */}
-      <h1 className="down-ele font-bold text-4xl text-[#FE65C5] mt-10 ml-6 relative z-10">
-        soundtrack of life
+      <h1 className="down-ele absolute top-48 font-bold text-8xl text-[#FE65C5] ml-4 z-10">
+        sound
       </h1>
+      <h1 className="down-ele absolute top-72 left-32 font-bold text-8xl text-[#FE65C5] z-10">
+        track
+      </h1>
+      <div className="down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white z-10">
+        of life
+      </div>
+
       {/* vinyl image */}
       <div className="w-full h-full relative z-0">
         <img
           id="vinyl-img"
-          className="absolute top-0 -left-[85vw] size-[160vw] object-contain"
+          className="absolute top-10 -left-[85vw] size-[160vw] object-contain"
           src="/vinyl.png"
         />
       </div>

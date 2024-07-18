@@ -44,7 +44,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         </div>
 
         {/* question */}
-        <div className="pt-9">
+        <div className="pt-5">
           <h1 className="text-[#D2F9FF] text-4xl font-bold"> If your life </h1>
           <h1 className="text-[#D2F9FF] text-4xl font-bold"> were a movie, </h1>
         </div>
@@ -72,8 +72,8 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1.3}
-        spaceBetween={30}
+        slidesPerView={1.4}
+        spaceBetween={25}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -84,7 +84,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper h-full !w-full !pt-10"
+        className="myGenreSwiper w-full !pt-10"
       >
         {images.map((image, i) => (
           <SwiperSlide key={`slide-${i}`}>
@@ -95,7 +95,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
 
       {/* footer & buttons */}
       <div className="flex justify-between">
-        <img className="pl-5 pt-24" src="dots.svg" />
+        <img className="absolute left-5 bottom-16" src="dots.svg" />
         <div className="absolute bottom-6 right-0">
           <button onClick={onNext} className="p-5 flex space-x-3 items-center">
             <div className="border-2 border-white rounded-full w-11 h-11" />
