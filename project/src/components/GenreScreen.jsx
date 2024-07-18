@@ -15,12 +15,21 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   }
 
   const images = [
-    { url: "/genre/romance.png", answer: ["warm", "intimate", "emotional"] },
-    { url: "/genre/comedy.png", answer: ["fun", "homurous", "playful"] },
-    { url: "/genre/romance.png", answer: ["warm", "intimate", "emotional"] },
-    { url: "/genre/comedy.png", answer: ["fun", "homurous", "playful"] },
-    { url: "/genre/romance.png", answer: ["warm", "intimate", "emotional"] },
-    { url: "/genre/comedy.png", answer: ["fun", "homurous", "playful"] },
+    {
+      url: "/genre/romance.png",
+      answer: ["powerful", "high-energy", "exciting"],
+    },
+    { url: "/genre/romance.png", answer: ["intimate", "warm", "emotional"] },
+    {
+      url: "/genre/comedy.png",
+      answer: ["fun", "upbeat", "cheerful", "playful"],
+    },
+    { url: "/genre/comedy.png", answer: ["scary", "fear", "tense"] },
+    { url: "/genre/romance.png", answer: ["magical", "adventurous"] },
+    {
+      url: "/genre/comedy.png",
+      answer: ["emotional", "reflective", "powerful"],
+    },
   ];
 
   return (
@@ -30,9 +39,8 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
     >
       {/* header */}
       <div className="px-5">
-        <div className="py-5 flex flex-row justify-between">
+        <div className="py-5">
           <h1 className="text-white text-m font-bold"> Logo </h1>
-          <img src="/4dot.svg" />
         </div>
 
         {/* question */}
@@ -64,13 +72,14 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={1.4}
-        spaceBetween={20}
+        slidesPerView={1.3}
+        spaceBetween={30}
         coverflowEffect={{
-          rotate: 30,
+          rotate: 50,
           stretch: 0,
-          depth: 200,
+          depth: 150,
           modifier: 1,
+          scale: 1.3,
           slideShadows: true,
         }}
         pagination={true}
@@ -84,12 +93,15 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         ))}
       </Swiper>
 
-      {/* button */}
-      <div className="absolute bottom-8 right-0">
-        <button onClick={onNext} className="p-5 flex space-x-3 items-center">
-          <span className="font-bold text-white"> next </span>
-          <img className="w-8 " src="/arrow2.svg" />
-        </button>
+      {/* footer & buttons */}
+      <div className="flex justify-between">
+        <img className="pl-5 pt-24" src="dots.svg" />
+        <div className="absolute bottom-6 right-0">
+          <button onClick={onNext} className="p-5 flex space-x-3 items-center">
+            <div className="border-2 border-white rounded-full w-11 h-11" />
+            <img className="absolute left-4" src="/arrow8.svg" />
+          </button>
+        </div>
       </div>
     </div>
   );

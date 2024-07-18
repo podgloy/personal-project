@@ -8,9 +8,8 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
     >
       {/* header */}
       <div className="px-5">
-        <div className="py-5 flex flex-row justify-between">
+        <div className="py-5">
           <h1 className="text-white text-m font-bold"> Logo </h1>
-          <img src="/4dot.svg" />
         </div>
 
         {/* question */}
@@ -50,10 +49,12 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
           <img className="w-8 rotate-180" src="/arrow2.svg" />
           <span className="font-medium text-white"> back </span>
         </button>
-        <button onClick={onNext} className="p-5 flex space-x-3 items-center">
-          <span className="font-medium text-white"> next </span>
-          <img className="w-8 " src="/arrow2.svg" />
-        </button>
+        <div className="absolute bottom-6 right-0">
+          <button onClick={onNext} className="p-5 flex space-x-3 items-center">
+            <div className="border-2 border-white rounded-full w-11 h-11" />
+            <img className="absolute left-4" src="/arrow8.svg" />
+          </button>
+        </div>
       </div>
     </div>
   );

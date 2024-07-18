@@ -37,17 +37,15 @@ body {
   align-items: center;
 }
 
-.swiper {
-  width: 240px;
-  height: 320px;
+.myColorSwiper {
+  width: 325px;
+  height: 230px;
 }
 
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
+  border-radius: 10px;
   color: #fff;
 }
