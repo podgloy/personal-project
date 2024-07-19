@@ -14,17 +14,22 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
 
         {/* question */}
         <div className="pt-5">
-          <p className="text-[#F9E7FF] text-3xl font-bold">What word best</p>
-          <p className="text-[#F9E7FF] text-3xl font-bold">describe your</p>
-          <p className="text-[#F9E7FF] text-3xl font-bold">life as a</p>
-          <h1 className="covered-by-your-grace-regular pt-8 text-[#B5FF6A] text-7xl font-bold text-right">
-            TAGLINE
+          <p className="text-[#F9E7FF] text-3xl font-bold">What word</p>
+          <p className="text-[#F9E7FF] text-3xl font-bold">best describes</p>
+          <p className="pt-8 text-[#F9E7FF] text-3xl font-bold text-right">
+            your life as a
+          </p>
+          <h1 className="covered-by-your-grace-regular text-[#B5FF6A] text-7xl font-bold text-right">
+            TAG
+          </h1>
+          <h1 className="covered-by-your-grace-regular text-[#B5FF6A] text-7xl font-bold text-right">
+            LINE
           </h1>
         </div>
 
         {/* placeholder */}
         <input
-          className="mt-20 placeholder:italic placeholder:text-grey-500 placeholder:text-l block bg-transparent w-full border border-slate-300 rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
+          className="mt-16 placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
           placeholder="type something..."
           name="input"
           type="text"
@@ -32,13 +37,13 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
 
         {/* choice */}
         <div className="flex flex-row space-x-2 pt-4">
-          <div className="bg-white bg-opacity-35 text-zinc-300 text-sm px-3 py-1 rounded-md">
+          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
             love
           </div>
-          <div className="bg-white bg-opacity-35 text-zinc-300 text-sm px-3 py-1 rounded-md">
+          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
             inspiration
           </div>
-          <div className="bg-white bg-opacity-35 text-zinc-300 text-sm px-3 py-1 rounded-md">
+          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
             joy
           </div>
         </div>

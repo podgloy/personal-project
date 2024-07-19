@@ -9,7 +9,7 @@ export default function LoadingScreen() {
     //     <img src="/4dot.svg" />
     //   </div>
 
-    <div className="absolute bottom-0 left-0 h-screen w-screen bg-zinc-900 flex flex-col pt-16">
+    <div className="absolute bottom-0 left-0 h-screen w-screen bg-[#FFE24D] flex flex-col pt-16">
       {/* header */}
       <div className="px-5">
         <div className="py-5 flex flex-row justify-between">
@@ -19,10 +19,12 @@ export default function LoadingScreen() {
       </div>
 
       {/* vinyl image */}
-      <img className="mt-44 place-self-center size-[70vw]" src="/vinyl2.png" />
+      <img className="mt-44 place-self-center size-[70vw]" src="/vinyl.png" />
 
       {/* loading */}
-      <p className="pt-20 font-semibold text-3xl text-center">loading...</p>
+      <p className="pt-20 text-[#0A59CE] font-semibold text-3xl text-center">
+        loading...
+      </p>
       <div className="flex flex-row px-20">
         <div className="mt-4 h-1 w-40 bg-zinc-300 rounded-full place-self-center" />
         <div className="mt-4 h-1 w-60 bg-zinc-700 rounded-full place-self-center" />
