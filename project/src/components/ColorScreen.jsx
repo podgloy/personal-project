@@ -39,7 +39,7 @@ export default function ColorScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#F45E2E] flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/ColorBG.png')] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
@@ -49,20 +49,24 @@ export default function ColorScreen({
 
         {/* question1 */}
         <div className="pt-5">
-          <h1 className="text-[#FFE679] text-3xl font-bold">Which</h1>
+          <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
+            Which
+          </h1>
           <h1 className="covered-by-your-grace-regular pt-3 text-[#77E6FF] text-7xl font-bold">
             COLOR
           </h1>
-          <h1 className="text-[#FFE679] text-3xl font-bold">most perfectly</h1>
+          <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
+            most perfectly
+          </h1>
         </div>
 
         {/* question2 */}
         <div className="pt-9">
-          <h1 className="text-[#FFE679] text-4xl font-bold text-right">
+          <h1 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
             {" "}
             describes{" "}
           </h1>
-          <h1 className="text-[#FFE679] text-4xl font-bold text-right">
+          <h1 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
             {" "}
             your life?{" "}
           </h1>

@@ -4,7 +4,7 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#F753A9] flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/TaglineBG.png')] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">

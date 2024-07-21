@@ -69,7 +69,7 @@ export default function WelcomeScreen() {
       <h1 className="down-ele absolute top-72 left-32 font-bold text-8xl text-[#FE65C5] z-10">
         track
       </h1>
-      <div className="down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white z-10">
+      <div className="made-dillan down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white z-10">
         of life
       </div>
 

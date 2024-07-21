@@ -35,7 +35,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#2D9B40] flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/GenreBG.png')] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
@@ -45,21 +45,27 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
 
         {/* question */}
         <div className="pt-5">
-          <h1 className="text-[#D2F9FF] text-4xl font-bold"> If your life </h1>
-          <h1 className="text-[#D2F9FF] text-4xl font-bold"> were a movie, </h1>
+          <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
+            {" "}
+            If your life{" "}
+          </h1>
+          <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
+            {" "}
+            were a movie,{" "}
+          </h1>
         </div>
 
         {/* 2nd paragraph */}
         <div className="pt-5">
-          <h1 className="text-[#D2F9FF] text-3xl font-bold text-right">
+          <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
             {" "}
             What{" "}
           </h1>
-          <h1 className="covered-by-your-grace-regular pt-3 text-[#DBFC3B] text-7xl font-bold text-right">
+          <h1 className=" pt-3 text-[#DBFC3B] text-7xl font-bold text-right">
             {" "}
             GENRE{" "}
           </h1>
-          <h1 className="text-[#D2F9FF] text-3xl font-bold text-right">
+          <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
             {" "}
             would it belong to?{" "}
           </h1>

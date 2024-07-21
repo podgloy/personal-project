@@ -4,7 +4,7 @@ export default function FontScreen({ className, id, onBack, onNext }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#0084CF] flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/FontBG.png')] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
@@ -14,24 +14,28 @@ export default function FontScreen({ className, id, onBack, onNext }) {
 
         {/* question */}
         <div className="pt-5">
-          <h2 className="text-white opacity-60 text-3xl font-bold text-right">
+          <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             What
           </h2>
           <h1 className="covered-by-your-grace-regular pt-3 text-[#C9FF70] text-7xl font-bold text-right">
             FONT
           </h1>
-          <h2 className="text-white opacity-60 text-3xl font-bold text-right">
+          <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             would be used for
           </h2>
-          {/* <h2 className="mt-7 text-white text-3xl font-bold">'the end' of</h2>
-          <h2 className="text-white text-3xl font-bold">your life</h2> */}
         </div>
 
         {/* the end screen */}
         <div className=" mt-9 h-60 bg-white rounded-md" />
       </div>
+
+      {/* question text */}
+      <h2 className="mt-4 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
+        of your life?
+      </h2>
+
       {/* scroller */}
-      <img className="mt-8 flex flex-col w-full" src="/scroller.png" />
+      <img className="mt-6 flex flex-col w-full" src="/scroller.png" />
 
       {/* button */}
       <div className="">
