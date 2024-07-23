@@ -17,9 +17,8 @@ export default function FontScreen({ className, id, onBack, onNext }) {
           <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             What
           </h2>
-          <h1 className="covered-by-your-grace-regular pt-3 text-[#C9FF70] text-7xl font-bold text-right">
-            FONT
-          </h1>
+          <img className=" pt-3 justify-end" src="/text/fontText.svg" />
+
           <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             would be used for
           </h2>

@@ -16,18 +16,18 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
 
   const images = [
     {
-      url: "/genre/romance.png",
+      url: "/genre/action.gif",
       answer: ["powerful", "high-energy", "exciting"],
     },
-    { url: "/genre/romance.png", answer: ["intimate", "warm", "emotional"] },
+    { url: "/genre/romance.gif", answer: ["intimate", "warm", "emotional"] },
     {
-      url: "/genre/comedy.png",
+      url: "/genre/comedy.gif",
       answer: ["fun", "upbeat", "cheerful", "playful"],
     },
-    { url: "/genre/comedy.png", answer: ["scary", "fear", "tense"] },
-    { url: "/genre/romance.png", answer: ["magical", "adventurous"] },
+    { url: "/genre/comedy.gif", answer: ["scary", "fear", "tense"] },
+    { url: "/genre/fantasy.gif", answer: ["magical", "adventurous"] },
     {
-      url: "/genre/comedy.png",
+      url: "/genre/drama.gif",
       answer: ["emotional", "reflective", "powerful"],
     },
   ];
@@ -61,11 +61,8 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
             {" "}
             What{" "}
           </h1>
-          <h1 className=" pt-3 text-[#DBFC3B] text-7xl font-bold text-right">
-            {" "}
-            GENRE{" "}
-          </h1>
-          <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
+          <img className=" pt-3 float-right" src="/text/genreText.svg" />
+          <h1 className="made-dillan float-right text-[#D2F9FF] text-3xl font-bold">
             {" "}
             would it belong to?{" "}
           </h1>

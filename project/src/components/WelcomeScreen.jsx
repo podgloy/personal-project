@@ -56,7 +56,7 @@ export default function WelcomeScreen() {
   return (
     <div
       id="welcome-screen-wrapper"
-      className="p-6 pt-16 relative h-screen flex flex-col bg-[#155FCB]"
+      className="p-6 pt-16 relative h-screen flex flex-col bg-[url('/bg/blueBG.png')] bg-contain"
     >
       {/* <button onClick={() => triggerVinyl()}>Click here</button> */}
       {/* logo */}

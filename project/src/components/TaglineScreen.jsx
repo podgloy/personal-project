@@ -14,17 +14,16 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
 
         {/* question */}
         <div className="pt-5">
-          <p className="text-[#F9E7FF] text-3xl font-bold">What word</p>
-          <p className="text-[#F9E7FF] text-3xl font-bold">best describes</p>
-          <p className="pt-8 text-[#F9E7FF] text-3xl font-bold text-right">
+          <p className="made-dillan text-[#FFF9C5] text-4xl font-bold">
+            What word
+          </p>
+          <p className="made-dillan text-[#FFF9C5] text-4xl font-bold">
+            best describes
+          </p>
+          <p className="pt-8 made-dillan text-[#FFF9C5] text-3xl font-bold text-right">
             your life as a
           </p>
-          <h1 className="covered-by-your-grace-regular text-[#B5FF6A] text-7xl font-bold text-right">
-            TAG
-          </h1>
-          <h1 className="covered-by-your-grace-regular text-[#B5FF6A] text-7xl font-bold text-right">
-            LINE
-          </h1>
+          <img className=" pt-3 float-right" src="/text/taglineText.svg" />
         </div>
 
         {/* placeholder */}

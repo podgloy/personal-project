@@ -52,9 +52,8 @@ export default function ColorScreen({
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
           </h1>
-          <h1 className="covered-by-your-grace-regular pt-3 text-[#77E6FF] text-7xl font-bold">
-            COLOR
-          </h1>
+          <img className=" pt-3" src="/text/colorText.svg" />
+
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             most perfectly
           </h1>
