@@ -4,10 +4,14 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import SiteLogo from "./SiteLogo";
 
 export default function GenreScreen({ className, id, onNext, onSelect }) {
   const [swiper, setSwiper] = useState(null);
+  useEffect(() => {
+    onSelect("genre", images[0].answer);
+  }, []);
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
     const selectedImage = images[activeIndex];
@@ -35,16 +39,13 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/GenreBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/GenreBG.png')] bg-contain flex flex-col pt-6 ${className}`}
     >
       {/* header */}
       <div className="px-5">
-        <div className="py-5">
-          <h1 className="text-white text-m font-bold"> Logo </h1>
-        </div>
-
+        <SiteLogo />
         {/* question */}
-        <div className="pt-5">
+        <div className="pt-24">
           <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
             {" "}
             If your life{" "}
@@ -58,13 +59,13 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         {/* 2nd paragraph */}
         <div className="pt-5">
           <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
-            {" "}
-            What{" "}
+            What
           </h1>
-          <img className=" pt-3 float-right" src="/text/genreText.svg" />
+          <h2 className="allenoire text-7xl text-[#FFCB00] text-shadow-red pt-3 float-right">
+            GENRE
+          </h2>
           <h1 className="made-dillan float-right text-[#D2F9FF] text-3xl font-bold">
-            {" "}
-            would it belong to?{" "}
+            would it belong to?
           </h1>
         </div>
       </div>
@@ -85,7 +86,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           scale: 1.3,
           slideShadows: true,
         }}
-        pagination={true}
+        pagination={false}
         modules={[EffectCoverflow, Pagination]}
         className="myGenreSwiper w-full !pt-10"
       >

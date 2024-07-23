@@ -1,6 +1,20 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
-export default function TaglineScreen({ className, id, onBack, onNext }) {
+export default function TaglineScreen({
+  className,
+  id,
+  onBack,
+  onNext,
+  onSelect,
+}) {
+  const [tag, setTag] = useState("");
+  const suggestions = ["love", "inspiration", "joy"];
+
+  function onType(val) {
+    setTag(val);
+    onSelect("tagline", val);
+  }
   return (
     <div
       id={id}
@@ -32,19 +46,23 @@ export default function TaglineScreen({ className, id, onBack, onNext }) {
           placeholder="type something..."
           name="input"
           type="text"
+          onChange={(e) => onType(e.target.value)}
+          value={tag}
         />
 
         {/* choice */}
         <div className="flex flex-row space-x-2 pt-4">
-          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
-            love
-          </div>
-          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
-            inspiration
-          </div>
-          <div className="bg-white bg-opacity-35 text-white text-sm px-3 py-1 rounded-md">
-            joy
-          </div>
+          {suggestions.map((suggestion) => (
+            <div
+              key={suggestion}
+              onClick={() => onType(suggestion)}
+              className={`bg-white text-white text-sm px-3 py-1 rounded-md duration-200 ${
+                suggestion === tag ? "bg-opacity-50" : "bg-opacity-35"
+              }`}
+            >
+              {suggestion}
+            </div>
+          ))}
         </div>
       </div>
 

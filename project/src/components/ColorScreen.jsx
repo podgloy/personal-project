@@ -2,8 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { EffectCards } from "swiper/modules";
 
 const images = [
@@ -30,6 +29,9 @@ export default function ColorScreen({
   onSelect,
 }) {
   const [swiper, setSwiper] = useState(null);
+  useEffect(() => {
+    onSelect("color", images[0].answer);
+  }, []);
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
     const selectedImage = images[activeIndex];
@@ -52,8 +54,9 @@ export default function ColorScreen({
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
           </h1>
-          <img className=" pt-3" src="/text/colorText.svg" />
-
+          <h1 className="text-7xl text-[#87FFF1] allenoire text-shadow-blue pt-3">
+            COLOR
+          </h1>
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             most perfectly
           </h1>

@@ -1,6 +1,24 @@
 "use client";
 
-export default function ResultScreen({ className, id, onNext, onBack }) {
+import { useEffect } from "react";
+
+export default function ResultScreen({
+  className,
+  id,
+  onNext,
+  onBack,
+  imageResult,
+  isActive,
+}) {
+  useEffect(() => {
+    const audio = document.querySelector("audio");
+    if (!isActive) {
+      audio.pause();
+      return;
+    } else {
+      audio.play();
+    }
+  }, [isActive]);
   return (
     <div
       id={id}
@@ -15,8 +33,16 @@ export default function ResultScreen({ className, id, onNext, onBack }) {
       </p>
 
       {/* vinyl image */}
-      <img className="mt-12 w-full" src="/resultVinyl.png" />
-
+      <audio>
+        <source
+          src="https://file-examples.com/storage/fec56f7158669f77293e4db/2017/11/file_example_MP3_700KB.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+      <div className="relative mt-12 w-full">
+        <img className="absolute z-0 w-[80%]" src={imageResult} />
+        <img className="relative z-10 w-full" src="/resultVinyl.png" />
+      </div>
       {/* share & download */}
       <button>
         <div className="absolute right-5 bottom-16 h-10 w-10 bg-white rounded-full" />

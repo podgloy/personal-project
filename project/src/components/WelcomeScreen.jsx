@@ -2,6 +2,8 @@
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect } from "react";
+import FilmOverlay from "./FilmOverlay";
+import SiteLogo from "./SiteLogo";
 
 export default function WelcomeScreen() {
   // init animateGsap function
@@ -47,54 +49,54 @@ export default function WelcomeScreen() {
     animateGsap();
   }, []);
 
-  // function triggerVinyl() {
-  //   gsap.to("#vinyl-img", {
-  //     scale: 1.5,
-  //     duration: 1,
-  //   });
-  // }
-
   return (
     <div
       id="welcome-screen-wrapper"
       className="p-6 relative h-screen flex flex-col bg-[#155FCB] overflow-hidden"
     >
+      {/* Overlay */}
+      <FilmOverlay />
       {/* logo */}
-      <Image
-        src="/stol-logo.png"
-        alt="Logo Image"
-        width="120"
-        height="60"
-        className="down-ele"
-      />
-      {/* welcome message */}
-      <h1 className="down-ele absolute top-48 font-bold text-8xl text-[#FE65C5] ml-4 z-10 allenoire">
-        sound
-      </h1>
-      <h1 className="down-ele absolute top-72 left-32 font-bold text-8xl text-[#FE65C5] z-10 allenoire">
-        track
-      </h1>
-      <div className="made-dillan down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white z-10">
-        of life
-      </div>
+      <SiteLogo className="down-ele" />
+      {/* welcome message border */}
+      <WelcomeMessage />
       {/* vinyl image */}
       <div className="w-full h-full relative z-0">
         <img
           id="vinyl-img"
-          className="absolute top-10 -left-[85vw] size-[160vw] object-contain"
+          className="absolute top-40 -left-[340px] size-[640px] object-contain"
           src="/vinyl.png"
         />
       </div>
+      {/* welcome message color */}
+      <WelcomeMessage addedClass="z-0 welcome-text-stroke" />
       {/* icon */}
       <div className="up-ele flex flex-col space-y-4 relative z-10">
         <span className="text-white text-center">scroll down</span>
         <img className="h-8 animate-bounce" src="arrow.svg" />
       </div>
-      {/* Overlay */}
-      <img
-        src="/film-grain.png"
-        className="absolute w-full h-full top-0 left-0 object-cover opacity-50"
-      />
     </div>
+  );
+}
+
+function WelcomeMessage({ addedClass = 10 }) {
+  return (
+    <>
+      <h1
+        className={`down-ele absolute top-48 font-bold text-7xl text-[#FE65C5] ml-4 allenoire ${addedClass}`}
+      >
+        SOUND
+      </h1>
+      <h1
+        className={`down-ele absolute top-72 left-32 font-bold text-7xl text-[#FE65C5] allenoire ${addedClass}`}
+      >
+        TRACK
+      </h1>
+      <div
+        className={`made-dillan down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white`}
+      >
+        of life
+      </div>
+    </>
   );
 }

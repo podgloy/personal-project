@@ -4,7 +4,6 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import LenisProvider from "@/components/LenisProvider";
 import { useState } from "react";
 import { useLenis } from "lenis/react";
-import axios from "axios";
 
 export default function Home() {
   // state for show welcome screen
@@ -24,27 +23,6 @@ export default function Home() {
     },
     [isShowWelcomeScreen]
   );
-
-  async function note(event) {
-    event.preventDefault();
-    setIsLoading(true);
-
-    const genre = event.target.genre.value;
-    const color = event.target.color.value;
-    const font = event.target.font.value;
-    const tagline = event.target.tagline.value;
-
-    const response = await axios.post("/api/create-img", {
-      genre,
-      color,
-      font,
-      tagline,
-    });
-
-    console.log(response.data);
-    setAnswer(response.data.answer);
-    setIsLoading(false);
-  }
 
   return (
     <main className="text-white bg-zinc-900">

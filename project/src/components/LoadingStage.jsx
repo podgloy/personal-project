@@ -30,14 +30,11 @@ export default function LoadingScreen({
 
         {/* vinyl image */}
         <img className="mt-20 place-self-center size-[70vw]" src="/vinyl.png" />
-
         {/* loading */}
-
-        <div className="flex flex-row px-20">
-          <div className="mt-12 h-1 w-40 bg-zinc-300 rounded-full place-self-center" />
-          <div className="mt-12 h-1 w-60 bg-zinc-700 rounded-full place-self-center" />
+        <div className="relative mx-20 h-1 bg-zinc-300 mt-12">
+          <div className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full animate-loading" />
         </div>
-        <p className="pt-4 made-dillan text-[#0A59CE] text-2xl text-center">
+        <p className="pt-4 made-dillan text-[#0A59CE] text-2xl text-center animate-loading">
           78%
         </p>
       </div>

@@ -57,6 +57,12 @@ body {
   height: 230px;
 }
 
+.myFontSwiper{
+  .swiper-slide-active{
+    color: #FBFF37 !important;
+  }
+}
+
 .swiper-slide {
   display: flex;
   align-items: center;
@@ -64,3 +70,33 @@ body {
   border-radius: 10px;
   color: #fff;
 }
+
+.welcome-text-stroke{
+  -webkit-text-stroke: 1px #FE65C5;
+  color: transparent;
+}
+
+.text-shadow-red {
+  text-shadow: 4px 4px #cc0000;
+  -webkit-text-stroke: 5px #cc0000;
+  paint-order: stroke fill;
+  font-weight: 700;
+}
+
+.text-shadow-blue {
+  text-shadow: 4px 4px #0039A8;
+  -webkit-text-stroke: 5px #0039A8;
+  paint-order: stroke fill;
+  font-weight: 700;
+}
+
+
+/* Font screen  */
+.DM_Serif_Display{
+  font-family: '__DM_Serif_Display_fb0d26', serif !important;
+}
+.Archivo_Black{
+  font-family: '__Archivo_Black_925659',
+    '__Archivo_Black_Fallback_925659', sans-serif !important;
+}
+
