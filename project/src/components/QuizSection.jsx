@@ -6,6 +6,7 @@ import ColorScreen from "./ColorScreen";
 import FontScreen from "./FontScreen";
 import TaglineScreen from "./TaglineScreen";
 import LoadingStage from "./LoadingStage";
+import ResultScreen from "./resultScreen";
 
 export default function QuizSection() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
@@ -16,6 +17,7 @@ export default function QuizSection() {
     FontScreen,
     TaglineScreen,
     LoadingStage,
+    ResultScreen,
   ];
   function next() {
     if (currentQuiz === quizComponents.length - 1) return;

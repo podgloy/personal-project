@@ -1,37 +1,36 @@
-// "use client";
+"use client";
 
-// import axios from "axios";
-// import { useState } from "react";
+export default function ResultScreen({ className, id, onNext, onBack }) {
+  return (
+    <div
+      id={id}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/BlueBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+    >
+      {/* header */}
+      <p className="pt-16 made-dillan text-white text-2xl text-center">
+        SOUNDTRACK
+      </p>
+      <p className="pt-4 made-dillan text-white text-5xl text-center">
+        of ........ 's life
+      </p>
 
-// export default function Home() {
+      {/* vinyl image */}
+      <img className="mt-12 w-full" src="/resultVinyl.png" />
 
-//   const [answer, setAnswer] = useState("")
-//   const [isLoading, setIsLoading] = useState(false)
+      {/* share & download */}
+      <button>
+        <div className="absolute right-5 bottom-16 h-10 w-10 bg-white rounded-full" />
+        <div className="absolute right-20 bottom-16 h-10 w-10 bg-white rounded-full" />
+      </button>
 
-//   async function note(event) {
-//     event.preventDefault();
-//     setIsLoading(true);
-
-//     const gender = event.target.gender.value;
-//     const appearance = event.target.appearance.value;
-
-//     const response = await axios.post("/api/gen-music", {
-//       gender,
-//       appearance
-//     })
-
-//     console.log(response.data)
-//     setAnswer(response.data.answer)
-//     setIsLoading(false);
-//   }
-
-//   return (
-//     <div>
-
-//       <p className="p-4">{isLoading ? 'Loading...' : ''}</p>
-//       {/* <p className="p-4">{answer}</p> */}
-//       {answer && <img src={answer} className="w-full" alt ="AI generated image" />}
-//     </div>
-//   );
-
-// }
+      {/* back button */}
+      <button
+        onClick={onBack}
+        className="absolute bottom-8 p-5 flex space-x-3 items-center"
+      >
+        <img className="w-8 rotate-180" src="/arrow2.svg" />
+        <span className="font-medium text-black"> back </span>
+      </button>
+    </div>
+  );
+}
