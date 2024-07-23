@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 body {
+  @apply max-w-md mx-auto;
   background: rgb(22, 22, 22);
   font-family: 'Epilogue', sans-serif;
 }
@@ -15,6 +19,12 @@ body {
 
 .made-dillan {
   font-family: var(--font-dillan);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allenoire{
+  font-family: var(--font-allenoire);
   font-weight: 400;
   font-style: normal;
 }

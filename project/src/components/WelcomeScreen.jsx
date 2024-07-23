@@ -1,5 +1,6 @@
 "use client";
 import gsap from "gsap";
+import Image from "next/image";
 import { useEffect } from "react";
 
 export default function WelcomeScreen() {
@@ -56,23 +57,26 @@ export default function WelcomeScreen() {
   return (
     <div
       id="welcome-screen-wrapper"
-      className="p-6 pt-16 relative h-screen flex flex-col bg-[#155FCB]"
+      className="p-6 relative h-screen flex flex-col bg-[#155FCB] overflow-hidden"
     >
-      {/* <button onClick={() => triggerVinyl()}>Click here</button> */}
       {/* logo */}
-      <div className="down-ele h-9 w-16 bg-white" />
-
+      <Image
+        src="/stol-logo.png"
+        alt="Logo Image"
+        width="120"
+        height="60"
+        className="down-ele"
+      />
       {/* welcome message */}
-      <h1 className="down-ele absolute top-48 font-bold text-8xl text-[#FE65C5] ml-4 z-10">
+      <h1 className="down-ele absolute top-48 font-bold text-8xl text-[#FE65C5] ml-4 z-10 allenoire">
         sound
       </h1>
-      <h1 className="down-ele absolute top-72 left-32 font-bold text-8xl text-[#FE65C5] z-10">
+      <h1 className="down-ele absolute top-72 left-32 font-bold text-8xl text-[#FE65C5] z-10 allenoire">
         track
       </h1>
       <div className="made-dillan down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white z-10">
         of life
       </div>
-
       {/* vinyl image */}
       <div className="w-full h-full relative z-0">
         <img
@@ -86,6 +90,11 @@ export default function WelcomeScreen() {
         <span className="text-white text-center">scroll down</span>
         <img className="h-8 animate-bounce" src="arrow.svg" />
       </div>
+      {/* Overlay */}
+      <img
+        src="/film-grain.png"
+        className="absolute w-full h-full top-0 left-0 object-cover opacity-50"
+      />
     </div>
   );
 }
