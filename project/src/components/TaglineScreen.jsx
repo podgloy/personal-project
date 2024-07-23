@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SiteLogo from "./SiteLogo";
+import FilmOverlay from "./FilmOverlay";
 
 export default function TaglineScreen({
   className,
@@ -18,16 +20,15 @@ export default function TaglineScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/TaglineBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#FF60B3] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
-        <div className="py-5">
-          <h1 className="text-white text-m font-bold"> Logo </h1>
-        </div>
+        <FilmOverlay />
+        <SiteLogo />
 
         {/* question */}
-        <div className="pt-5">
+        <div className="pt-16">
           <p className="made-dillan text-[#FFF9C5] text-4xl font-bold">
             What word
           </p>
@@ -37,12 +38,17 @@ export default function TaglineScreen({
           <p className="pt-8 made-dillan text-[#FFF9C5] text-3xl font-bold text-right">
             your life as a
           </p>
-          <img className=" pt-3 float-right" src="/text/taglineText.svg" />
+          <h2 className="allenoire text-7xl text-[#B5FF6A] tracking-wider text-shadow-green pt-3 text-right">
+            TAG
+          </h2>
+          <h2 className="allenoire text-7xl text-[#B5FF6A] tracking-wider text-shadow-green text-right">
+            LINE
+          </h2>
         </div>
 
         {/* placeholder */}
         <input
-          className="mt-16 placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
+          className="mt-12 placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
           placeholder="type something..."
           name="input"
           type="text"

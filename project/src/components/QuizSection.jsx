@@ -87,6 +87,7 @@ export default function QuizSection() {
   useEffect(() => {
     if (currentQuiz === 4) {
       setIsLoading(true);
+
       // image
       async function createImage() {
         const genre = JSON.stringify(answers.genre);
@@ -106,7 +107,27 @@ export default function QuizSection() {
         }
       }
       createImage();
+
       // Music
+      async function createMusic() {
+        const genre = JSON.stringify(answers.genre);
+        const color = JSON.stringify(answers.color);
+        const font = answers.font;
+        const tagline = answers.tagline;
+        try {
+          const response = await axios.post("/api/gen-music", {
+            genre,
+            color,
+            font,
+            tagline,
+          });
+          setImageResult(response.data.answer);
+        } catch (error) {
+          console.error("Error creating music:", error);
+        }
+      }
+      createMusic();
+
       //////////////////
       setTimeout(() => {
         setIsLoading(false);

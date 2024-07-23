@@ -4,6 +4,8 @@ import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import { useState, useEffect } from "react";
 import { EffectCards } from "swiper/modules";
+import SiteLogo from "./SiteLogo";
+import FilmOverlay from "./FilmOverlay";
 
 const images = [
   {
@@ -41,20 +43,19 @@ export default function ColorScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/ColorBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#FE6F42] flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
-        <div className="py-5">
-          <h1 className="text-white text-m font-bold"> Logo </h1>
-        </div>
+        <FilmOverlay />
+        <SiteLogo />
 
         {/* question1 */}
-        <div className="pt-5">
+        <div className="pt-16">
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
           </h1>
-          <h1 className="text-7xl text-[#87FFF1] allenoire text-shadow-blue pt-3">
+          <h1 className="text-7xl text-[#87FFF1] allenoire tracking-wider text-shadow-blue pt-3">
             COLOR
           </h1>
           <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">

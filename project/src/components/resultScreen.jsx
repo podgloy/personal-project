@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import FilmOverlay from "./FilmOverlay";
+import SiteLogo from "./SiteLogo";
 
 export default function ResultScreen({
   className,
@@ -22,9 +24,14 @@ export default function ResultScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/BlueBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
+      <div className="px-5">
+        <SiteLogo />
+        <FilmOverlay />
+      </div>
+
       <p className="pt-16 made-dillan text-white text-2xl text-center">
         SOUNDTRACK
       </p>
@@ -39,8 +46,9 @@ export default function ResultScreen({
           type="audio/mpeg"
         />
       </audio>
-      <div className="relative mt-12 w-full">
-        <img className="absolute z-0 w-[80%]" src={imageResult} />
+      <div className="relative mt-8 w-full">
+        {/* <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} /> */}
+        <img className="absolute pt-40 z-0 w-[60%]" src="/catttt.png" />
         <img className="relative z-10 w-full" src="/resultVinyl.png" />
       </div>
       {/* share & download */}

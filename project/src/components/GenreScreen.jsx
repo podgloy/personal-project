@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { useState, useEffect } from "react";
 import SiteLogo from "./SiteLogo";
+import FilmOverlay from "./FilmOverlay";
 
 export default function GenreScreen({ className, id, onNext, onSelect }) {
   const [swiper, setSwiper] = useState(null);
@@ -39,20 +40,20 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/GenreBG.png')] bg-contain flex flex-col pt-6 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#38A04A] flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
+        <FilmOverlay />
         <SiteLogo />
+
         {/* question */}
-        <div className="pt-24">
+        <div className="pt-16">
           <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
-            {" "}
-            If your life{" "}
+            If your life
           </h1>
           <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
-            {" "}
-            were a movie,{" "}
+            were a movie,
           </h1>
         </div>
 
@@ -61,14 +62,15 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
             What
           </h1>
-          <h2 className="allenoire text-7xl text-[#FFCB00] text-shadow-red pt-3 float-right">
+          <h2 className="allenoire text-7xl text-[#FFCB00] tracking-wider text-shadow-red pt-3 textt-right">
             GENRE
           </h2>
-          <h1 className="made-dillan float-right text-[#D2F9FF] text-3xl font-bold">
+          <h1 className="made-dillan textt-right text-[#D2F9FF] text-3xl font-bold">
             would it belong to?
           </h1>
         </div>
       </div>
+
       {/* swiper */}
       <Swiper
         onSwiper={setSwiper}

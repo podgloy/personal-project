@@ -1,4 +1,6 @@
 import React from "react";
+import SiteLogo from "./SiteLogo";
+import FilmOverlay from "./FilmOverlay";
 
 export default function LoadingScreen({
   className,
@@ -10,15 +12,13 @@ export default function LoadingScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/TaglineBG.png')] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#FAF460] bg-contain flex flex-col pt-16 ${className}`}
     >
       <div className="absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/LoadingBG.png')] bg-contain flex flex-col pt-16">
         {/* header */}
         <div className="px-5">
-          <div className="py-5 flex flex-row justify-between">
-            <h1 className="text-white text-m font-bold"> Logo </h1>
-            <img src="/4dot.svg" />
-          </div>
+          <SiteLogo />
+          <FilmOverlay />
         </div>
 
         <p className="pt-16 made-dillan text-[#0A59CE] text-3xl text-center">

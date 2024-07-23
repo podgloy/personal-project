@@ -77,15 +77,29 @@ body {
 }
 
 .text-shadow-red {
-  text-shadow: 4px 4px #cc0000;
+  text-shadow: 5px 5px #cc0000;
   -webkit-text-stroke: 5px #cc0000;
   paint-order: stroke fill;
   font-weight: 700;
 }
 
 .text-shadow-blue {
-  text-shadow: 4px 4px #0039A8;
+  text-shadow: 5px 5px #0039A8;
   -webkit-text-stroke: 5px #0039A8;
+  paint-order: stroke fill;
+  font-weight: 700;
+}
+
+.text-shadow-yellow {
+  text-shadow: 5px 5px #D53400;
+  -webkit-text-stroke: 5px #D53400;
+  paint-order: stroke fill;
+  font-weight: 700;
+}
+
+.text-shadow-green {
+  text-shadow: 5px 5px #07641B;
+  -webkit-text-stroke: 5px #07641B;
   paint-order: stroke fill;
   font-weight: 700;
 }

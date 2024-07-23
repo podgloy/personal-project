@@ -52,26 +52,30 @@ export default function WelcomeScreen() {
   return (
     <div
       id="welcome-screen-wrapper"
-      className="p-6 relative h-screen flex flex-col bg-[#155FCB] overflow-hidden"
+      className="relative h-screen flex flex-col pt-16 bg-[#155FCB] overflow-hidden"
     >
-      {/* Overlay */}
-      <FilmOverlay />
-      {/* logo */}
-      <SiteLogo className="down-ele" />
+      <div className="px-5">
+        <SiteLogo className="down-ele" />
+        <FilmOverlay />
+      </div>
+
       {/* welcome message border */}
       <WelcomeMessage />
+
       {/* vinyl image */}
       <div className="w-full h-full relative z-0">
         <img
           id="vinyl-img"
-          className="absolute top-40 -left-[340px] size-[640px] object-contain"
+          className="absolute top-24 -left-[340px] size-[640px] object-contain"
           src="/vinyl.png"
         />
       </div>
+
       {/* welcome message color */}
       <WelcomeMessage addedClass="z-0 welcome-text-stroke" />
+
       {/* icon */}
-      <div className="up-ele flex flex-col space-y-4 relative z-10">
+      <div className="up-ele flex flex-col space-y-4 relative bottom-4 z-10">
         <span className="text-white text-center">scroll down</span>
         <img className="h-8 animate-bounce" src="arrow.svg" />
       </div>
@@ -83,7 +87,7 @@ function WelcomeMessage({ addedClass = 10 }) {
   return (
     <>
       <h1
-        className={`down-ele absolute top-48 font-bold text-7xl text-[#FE65C5] ml-4 allenoire ${addedClass}`}
+        className={`down-ele absolute top-52 left-12 font-bold text-7xl text-[#FE65C5] ml-4 allenoire ${addedClass}`}
       >
         SOUND
       </h1>
@@ -93,7 +97,7 @@ function WelcomeMessage({ addedClass = 10 }) {
         TRACK
       </h1>
       <div
-        className={`made-dillan down-ele absolute pt-80 top-20 right-8 font-bold text-4xl text-white`}
+        className={`made-dillan down-ele absolute pt-80 right-8 font-bold text-4xl text-white`}
       >
         of life
       </div>

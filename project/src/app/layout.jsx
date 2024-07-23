@@ -19,7 +19,7 @@ const Archivo_BlackFont = Archivo_Black({
   weight: ["400"],
 });
 export const metadata = {
-  title: "SOUND TRACK of life",
+  title: "SOUNDTRACK of life",
   description: "If your life were a movie, what genre would it belong to?",
   icons: {
     icon: "favicon.ico",

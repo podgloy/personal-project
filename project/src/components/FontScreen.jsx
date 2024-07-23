@@ -5,6 +5,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { useState, useEffect } from "react";
 import SiteLogo from "./SiteLogo";
+import FilmOverlay from "./FilmOverlay";
 
 export default function FontScreen({
   className,
@@ -15,15 +16,15 @@ export default function FontScreen({
 }) {
   const fonts = [
     {
-      text: "classic",
+      text: "Classic",
       answer: "DM_Serif_Display",
     },
     {
-      text: "script",
+      text: "Script",
       answer: "script",
     },
     {
-      text: "handwritten",
+      text: "Handwritten",
       answer: "handwritten",
     },
     {
@@ -47,17 +48,21 @@ export default function FontScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[url('/bg/FontBG.png')] bg-contain flex flex-col ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#1696DF] pt-16 flex flex-col ${className}`}
     >
       {/* header */}
-      <div className="p-5">
+      <div className="px-5">
+        <FilmOverlay />
         <SiteLogo />
+
         {/* question */}
-        <div className="pt-10">
+        <div className="pt-16">
           <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             What
           </h2>
-          <img className=" pt-3 justify-end" src="/text/fontText.svg" />
+          <h2 className="allenoire text-7xl text-[#FCFF62] tracking-wider text-shadow-yellow pt-3 text-right">
+            FONT
+          </h2>
 
           <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             would be used for
@@ -65,17 +70,17 @@ export default function FontScreen({
         </div>
 
         {/* the end screen */}
-        <div className="mt-9 p-4 text-center h-60 bg-white rounded-md flex items-center justify-center">
+        <div className="mt-9 p-4 text-center h-56 bg-white rounded-md flex items-center justify-center">
           <h3 className={`text-4xl text-gray-800 ${selectedFont}`}>The End</h3>
         </div>
       </div>
 
       {/* question text */}
-      <h2 className="mt-4 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
+      <h2 className="mt-2 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
         of your life?
       </h2>
       {/* scroller */}
-      <div className="relative mt-8">
+      <div className="relative mt-4">
         <img className="absolute top-0 w-full" src="/scroller-active.png" />
         {/* scroller text */}
         <Swiper
@@ -89,7 +94,7 @@ export default function FontScreen({
         >
           {fonts.map((font, i) => (
             <SwiperSlide key={`font-slide-${i}`} className="!pt-28">
-              <h4 className="font-bold text-4xl made-dillan text-center duration-300">
+              <h4 className="font-bold text-3xl made-dillan text-center duration-300">
                 {font.text}
               </h4>
             </SwiperSlide>
