@@ -10,6 +10,7 @@ export default function ResultScreen({
   onNext,
   onBack,
   imageResult,
+  musicResult,
   isActive,
 }) {
   useEffect(() => {
@@ -32,25 +33,32 @@ export default function ResultScreen({
         <FilmOverlay />
       </div>
 
-      <p className="pt-16 made-dillan text-white text-2xl text-center">
+      <h2 className="pt-16 made-dillan text-white text-2xl text-center">
         SOUNDTRACK
-      </p>
-      <p className="pt-4 made-dillan text-white text-5xl text-center">
+      </h2>
+      <h2 className="pt-4 made-dillan text-white text-5xl text-center">
         of ........ 's life
-      </p>
+      </h2>
 
-      {/* vinyl image */}
-      <audio>
+      {/* music-gen */}
+      {/* <audio>
         <source
           src="https://file-examples.com/storage/fec56f7158669f77293e4db/2017/11/file_example_MP3_700KB.mp3"
           type="audio/mpeg"
         />
+      </audio> */}
+
+      <audio>
+        <source src="{musicResult}" type="audio/mpeg" />
       </audio>
+
+      {/* image-gen */}
       <div className="relative mt-8 w-full">
         {/* <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} /> */}
         <img className="absolute pt-40 z-0 w-[60%]" src="/catttt.png" />
         <img className="relative z-10 w-full" src="/resultVinyl.png" />
       </div>
+
       {/* share & download */}
       <button>
         <div className="absolute right-5 bottom-16 h-10 w-10 bg-white rounded-full" />

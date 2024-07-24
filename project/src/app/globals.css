@@ -23,8 +23,20 @@ body {
   font-style: normal;
 }
 
-.allenoire{
+.allenoire {
   font-family: var(--font-allenoire);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.astralaga {
+  font-family: var(--font-astralaga);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.chillax {
+  font-family: var(--font-chillax);
   font-weight: 400;
   font-style: normal;
 }
@@ -109,8 +121,21 @@ body {
 .DM_Serif_Display{
   font-family: '__DM_Serif_Display_fb0d26', serif !important;
 }
+
 .Archivo_Black{
   font-family: '__Archivo_Black_925659',
     '__Archivo_Black_Fallback_925659', sans-serif !important;
+}
+
+.Reenie_Beanie {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.Dancing_Script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 

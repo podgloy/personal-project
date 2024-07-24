@@ -49,25 +49,25 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
 
         {/* question */}
         <div className="pt-16">
-          <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
+          <h2 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
             If your life
-          </h1>
-          <h1 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
+          </h2>
+          <h2 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
             were a movie,
-          </h1>
+          </h2>
         </div>
 
         {/* 2nd paragraph */}
         <div className="pt-5">
-          <h1 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
+          <h2 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
             What
-          </h1>
-          <h2 className="allenoire text-7xl text-[#FFCB00] tracking-wider text-shadow-red pt-3 textt-right">
+          </h2>
+          <h2 className="allenoire text-7xl text-[#FFCB00] tracking-wider text-shadow-red pt-3 text-right">
             GENRE
           </h2>
-          <h1 className="made-dillan textt-right text-[#D2F9FF] text-3xl font-bold">
+          <h2 className="made-dillan text-right text-[#D2F9FF] text-3xl font-bold">
             would it belong to?
-          </h1>
+          </h2>
         </div>
       </div>
 

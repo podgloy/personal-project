@@ -25,3 +25,29 @@ export const allenoire = localFont({
     },
   ],
 });
+
+export const astralaga = localFont({
+  variable: "--font-astralaga",
+  src: [
+    {
+      path: "../../public/font/astralaga/Astralaga_Font.ttf",
+      weight: "400",
+      style: "normal",
+      preload: true,
+      variable: true,
+    },
+  ],
+});
+
+export const chillax = localFont({
+  variable: "--font-chillax",
+  src: [
+    {
+      path: "../../public/font/chillax/Chillax_Font.otf",
+      weight: "400",
+      style: "normal",
+      preload: true,
+      variable: true,
+    },
+  ],
+});

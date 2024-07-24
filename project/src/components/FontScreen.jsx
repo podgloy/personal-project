@@ -14,33 +14,51 @@ export default function FontScreen({
   onNext,
   onSelect,
 }) {
+  const [swiper, setSwiper] = useState(null);
+  useEffect(() => {
+    onSelect("font", fonts[0].answer);
+  }, []);
+
+  function getImageValue() {
+    const activeIndex = swiper.activeIndex;
+    const selectedImage = fonts[activeIndex];
+    onSelect("font", selectedImage.answer);
+  }
   const fonts = [
     {
-      text: "Classic",
-      answer: "DM_Serif_Display",
-    },
-    {
       text: "Script",
-      answer: "script",
+      font: "Dancing_Script",
+      answer: ["elegant", "expressive", "flowing", "romantic"],
     },
     {
-      text: "Handwritten",
-      answer: "handwritten",
+      text: "Classic",
+      font: "DM_Serif_Display",
+      answer: ["traditional", "classic", "formal"],
     },
     {
       text: "Sans-Serif",
-      answer: "Archivo_Black",
+      font: "chillax",
+      answer: ["temporary", "fresh", "innovative"],
+    },
+    {
+      text: "Handwritten",
+      font: "Reenie_Beanie",
+      answer: ["relaxed", "organic"],
     },
   ];
-  const [swiper, setSwiper] = useState(null);
-  const [selectedFont, setSelectedFont] = useState(fonts[0].answer);
+  const [selectedFont, setSelectedFont] = useState(fonts[0].font);
   useEffect(() => {
-    onSelect("font", fonts[0]?.answer);
+    onSelect("font", fonts[0]?.font);
   }, []);
+
+  const handleSlideChange = () => {
+    selectFont(); // Call selectFont function
+    getImageValue(); // Call getImageValue function
+  };
 
   function selectFont() {
     const activeIndex = swiper.activeIndex;
-    const selectedFont = fonts[activeIndex]?.answer;
+    const selectedFont = fonts[activeIndex]?.font;
     setSelectedFont(selectedFont);
     onSelect("font", selectedFont);
   }
@@ -71,7 +89,7 @@ export default function FontScreen({
 
         {/* the end screen */}
         <div className="mt-9 p-4 text-center h-56 bg-white rounded-md flex items-center justify-center">
-          <h3 className={`text-4xl text-gray-800 ${selectedFont}`}>The End</h3>
+          <h3 className={`text-6xl text-gray-800 ${selectedFont}`}>The End</h3>
         </div>
       </div>
 
@@ -84,7 +102,7 @@ export default function FontScreen({
         <img className="absolute top-0 w-full" src="/scroller-active.png" />
         {/* scroller text */}
         <Swiper
-          onSlideChange={() => selectFont()}
+          onSlideChange={handleSlideChange}
           onSwiper={setSwiper}
           grabCursor={true}
           centeredSlides={true}

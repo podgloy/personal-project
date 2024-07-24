@@ -13,6 +13,8 @@ export default function QuizSection() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
   const [answers, setAnswers] = useState({});
   const [imageResult, setImageResult] = useState("");
+  const [musicResult, setMusicResult] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
   const quizComponents = [
     GenreScreen,
@@ -121,7 +123,7 @@ export default function QuizSection() {
             font,
             tagline,
           });
-          setImageResult(response.data.answer);
+          setMusicResult(response.data.answer);
         } catch (error) {
           console.error("Error creating music:", error);
         }
@@ -150,6 +152,7 @@ export default function QuizSection() {
           onBack={() => back()}
           onSelect={(name, val) => onSelect(name, val)}
           imageResult={imageResult}
+          musicResult={musicResult}
           isActive={currentQuiz === i}
         />
       ))}

@@ -34,6 +34,7 @@ export default function ColorScreen({
   useEffect(() => {
     onSelect("color", images[0].answer);
   }, []);
+
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
     const selectedImage = images[activeIndex];
@@ -52,27 +53,25 @@ export default function ColorScreen({
 
         {/* question1 */}
         <div className="pt-16">
-          <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
+          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
-          </h1>
-          <h1 className="text-7xl text-[#87FFF1] allenoire tracking-wider text-shadow-blue pt-3">
+          </h2>
+          <h2 className="text-7xl text-[#87FFF1] allenoire tracking-wider text-shadow-blue pt-3">
             COLOR
-          </h1>
-          <h1 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
+          </h2>
+          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             most perfectly
-          </h1>
+          </h2>
         </div>
 
         {/* question2 */}
         <div className="pt-9">
-          <h1 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
-            {" "}
-            describes{" "}
-          </h1>
-          <h1 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
-            {" "}
-            your life?{" "}
-          </h1>
+          <h2 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
+            describes
+          </h2>
+          <h2 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
+            your life?
+          </h2>
         </div>
 
         <Swiper

@@ -29,15 +29,15 @@ export default function TaglineScreen({
 
         {/* question */}
         <div className="pt-16">
-          <p className="made-dillan text-[#FFF9C5] text-4xl font-bold">
+          <h2 className="made-dillan text-[#FFF9C5] text-4xl font-bold">
             What word
-          </p>
-          <p className="made-dillan text-[#FFF9C5] text-4xl font-bold">
+          </h2>
+          <h2 className="made-dillan text-[#FFF9C5] text-4xl font-bold">
             best describes
-          </p>
-          <p className="pt-8 made-dillan text-[#FFF9C5] text-3xl font-bold text-right">
+          </h2>
+          <h2 className="pt-8 made-dillan text-[#FFF9C5] text-3xl font-bold text-right">
             your life as a
-          </p>
+          </h2>
           <h2 className="allenoire text-7xl text-[#B5FF6A] tracking-wider text-shadow-green pt-3 text-right">
             TAG
           </h2>

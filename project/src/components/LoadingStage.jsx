@@ -21,12 +21,12 @@ export default function LoadingScreen({
           <FilmOverlay />
         </div>
 
-        <p className="pt-16 made-dillan text-[#0A59CE] text-3xl text-center">
+        <h2 className="pt-16 made-dillan text-[#0A59CE] text-3xl text-center">
           your soundtrack is
-        </p>
-        <p className="made-dillan text-[#0A59CE] text-3xl text-center">
+        </h2>
+        <h2 className="made-dillan text-[#0A59CE] text-3xl text-center">
           on the way...
-        </p>
+        </h2>
 
         {/* vinyl image */}
         <img className="mt-20 place-self-center size-[70vw]" src="/vinyl.png" />
@@ -34,9 +34,6 @@ export default function LoadingScreen({
         <div className="relative mx-20 h-1 bg-zinc-300 mt-12">
           <div className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full animate-loading" />
         </div>
-        <p className="pt-4 made-dillan text-[#0A59CE] text-2xl text-center animate-loading">
-          78%
-        </p>
       </div>
 
       {/* back button */}
