@@ -18,6 +18,7 @@ export default function ResultScreen({
       audio.pause();
       return;
     } else {
+      console.log(audio);
       audio.play();
     }
   }, [isActive]);
