@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import FilmOverlay from "./FilmOverlay";
 import SiteLogo from "./SiteLogo";
 
@@ -12,26 +12,78 @@ export default function ResultScreen({
   musicResult,
   isActive,
 }) {
+  // audio
   useEffect(() => {
     const audio = document.querySelector("audio");
     if (!isActive) {
       audio.pause();
       return;
     } else {
+      console.log(audio);
       audio.play();
     }
   }, [isActive]);
+  // video recording
+  const [recorder, setRecorder] = useState(null);
+  const [displayMedia, setDisplayMedia] = useState(null);
+  const startScreenRecording = async () => {
+    try {
+      // Prompt the user to select a screen or window to share
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: { mediaSource: "screen" },
+      });
+
+      const newRecorder = new MediaRecorder(stream);
+      setRecorder(newRecorder);
+      setDisplayMedia(stream.getVideoTracks()[0]);
+      const screenRecordingChunks = [];
+
+      newRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) {
+          screenRecordingChunks.push(e.data);
+        }
+      };
+
+      newRecorder.onstop = () => {
+        const blob = new Blob(screenRecordingChunks, { type: "video/webm" });
+        const url = URL.createObjectURL(blob);
+
+        // Create a download link and click it programmatically
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = "screen-recording.webm";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+
+        // Stop the display media stream
+        if (displayMedia) {
+          displayMedia.stop();
+        }
+      };
+
+      // Start the recording
+      newRecorder.start();
+      setTimeout(() => {
+        // Stop the recording after 10 seconds
+        newRecorder.stop();
+      }, 10000); // 10 seconds
+    } catch (err) {
+      console.error("Error: " + err);
+    }
+  };
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
+      <button onClick={startScreenRecording}>Start 10s Screen Recording</button>
       {/* header */}
       <div className="px-5">
         <SiteLogo />
         <FilmOverlay />
       </div>
-
       <h2 className="pt-16 made-dillan text-white text-2xl text-center">
         SOUNDTRACK
       </h2>

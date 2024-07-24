@@ -29,25 +29,29 @@ export default function QuizSection() {
     gsap.fromTo(
       `#quiz-${currentQuiz}`,
       {
-        x: "0",
+        x: "0%",
         scale: 1,
+        opacity: 1,
       },
       {
-        x: "-100vw",
+        x: "-100%",
         scale: 0.8,
         duration: 1,
+        opacity: 1,
       }
     );
     gsap.fromTo(
       `#quiz-${currentQuiz + 1}`,
       {
-        x: "100vw",
+        x: "100%",
         scale: 0.8,
+        opacity: 1,
       },
       {
-        x: "0",
+        x: "0%",
         scale: 1,
         duration: 0.6,
+        opacity: 1,
       }
     );
     setCurrentQuiz(currentQuiz + 1);
@@ -58,11 +62,11 @@ export default function QuizSection() {
     gsap.fromTo(
       `#quiz-${currentQuiz}`,
       {
-        x: "0",
+        x: "0%",
         scale: 1,
       },
       {
-        x: "100vw",
+        x: "100%",
         scale: 0.8,
         duration: 1,
       }
@@ -70,11 +74,11 @@ export default function QuizSection() {
     gsap.fromTo(
       `#quiz-${currentQuiz - 1}`,
       {
-        x: "-100vw",
+        x: "-100%",
         scale: 0.8,
       },
       {
-        x: "0",
+        x: "0%",
         scale: 1,
         duration: 0.6,
       }
@@ -134,19 +138,18 @@ export default function QuizSection() {
       setTimeout(() => {
         setIsLoading(false);
         next();
-      }, 12000);
+      }, 5000);
     }
   }, [currentQuiz, answers]);
 
   return (
-    <div
-      id="quiz-section-wrapper"
-      className="relative z-10 h-screen w-screen overflow-hidden"
-    >
+    <div id="quiz-section-wrapper" className="relative z-10 h-screen">
       {quizComponents.map((Quiz, i) => (
         <Quiz
           key={i}
-          className={currentQuiz === i ? "z-10" : "pointer-events-none z-0"}
+          className={
+            currentQuiz === i ? "z-10" : "pointer-events-none z-0 opacity-0"
+          }
           id={`quiz-${i}`}
           onNext={() => next()}
           onBack={() => back()}
