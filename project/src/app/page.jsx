@@ -23,7 +23,6 @@ export default function Home() {
     },
     [isShowWelcomeScreen]
   );
-
   return (
     <main className="text-white bg-zinc-900">
       <LenisProvider>

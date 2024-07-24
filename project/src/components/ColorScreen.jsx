@@ -44,7 +44,7 @@ export default function ColorScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#FE6F42] flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-full bg-[#FE6F42] flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">

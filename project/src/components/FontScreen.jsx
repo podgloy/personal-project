@@ -66,7 +66,7 @@ export default function FontScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#1696DF] pt-16 flex flex-col ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-full bg-[#1696DF] pt-16 flex flex-col ${className}`}
     >
       {/* header */}
       <div className="px-5">

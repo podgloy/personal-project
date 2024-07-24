@@ -25,7 +25,7 @@ export default function ResultScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-screen bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
       {/* header */}
       <div className="px-5">
