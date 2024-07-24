@@ -131,10 +131,10 @@ export default function QuizSection() {
       createMusic();
 
       //////////////////
-      setTimeout(() => {
-        setIsLoading(false);
-        next();
-      }, 12000);
+      // setTimeout(() => {
+      //   setIsLoading(false);
+      //   next();
+      // }, 12000);
     }
   }, [currentQuiz, answers]);
 

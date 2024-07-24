@@ -1,6 +1,6 @@
-import React from "react";
 import SiteLogo from "./SiteLogo";
 import FilmOverlay from "./FilmOverlay";
+import { useEffect } from "react";
 
 export default function LoadingScreen({
   className,
@@ -8,7 +8,22 @@ export default function LoadingScreen({
   onNext,
   onBack,
   onSelect,
+  isActive,
 }) {
+  useEffect(() => {
+    const progress = document.getElementById("pregress-bar");
+    let width = 0;
+    const interval = setInterval(() => {
+      width += 1;
+      progress.style.width = `${width}%`;
+      if (width === 100) {
+        clearInterval(interval);
+        onSelect();
+      }
+    }, 50);
+    return () => clearInterval(interval);
+  }, [isActive]);
+
   return (
     <div
       id={id}
@@ -27,16 +42,16 @@ export default function LoadingScreen({
         <h2 className="made-dillan text-[#0A59CE] text-3xl text-center">
           on the way...
         </h2>
-
         {/* vinyl image */}
         <img className="mt-20 place-self-center size-[70vw]" src="/vinyl.png" />
-
         {/* loading */}
         <div className="relative mx-20 h-1 bg-zinc-300 mt-12">
-          <div className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full animate-loading" />
+          <div
+            id="pregress-bar"
+            className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full "
+          />
         </div>
       </div>
-
       {/* back button */}
       <button
         onClick={onBack}
