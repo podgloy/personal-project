@@ -7,7 +7,6 @@ import SiteLogo from "./SiteLogo";
 export default function ResultScreen({
   className,
   id,
-  onNext,
   onBack,
   imageResult,
   musicResult,
@@ -49,13 +48,13 @@ export default function ResultScreen({
       </audio> */}
 
       <audio>
-        <source src="{musicResult}" type="audio/mpeg" />
+        <source src={musicResult} type="audio/mpeg" />
       </audio>
 
       {/* image-gen */}
       <div className="relative mt-8 w-full">
-        {/* <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} /> */}
-        <img className="absolute pt-40 z-0 w-[60%]" src="/catttt.png" />
+        <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} />
+        {/* <img className="absolute pt-40 z-0 w-[60%]" src="/catttt.png" /> */}
         <img className="relative z-10 w-full" src="/resultVinyl.png" />
       </div>
 

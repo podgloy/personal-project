@@ -134,7 +134,7 @@ export default function QuizSection() {
       setTimeout(() => {
         setIsLoading(false);
         next();
-      }, 5000);
+      }, 12000);
     }
   }, [currentQuiz, answers]);
 

@@ -30,6 +30,7 @@ export default function LoadingScreen({
 
         {/* vinyl image */}
         <img className="mt-20 place-self-center size-[70vw]" src="/vinyl.png" />
+
         {/* loading */}
         <div className="relative mx-20 h-1 bg-zinc-300 mt-12">
           <div className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full animate-loading" />

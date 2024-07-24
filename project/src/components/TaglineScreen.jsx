@@ -24,7 +24,7 @@ export default function TaglineScreen({
     >
       {/* header */}
       <div className="px-5">
-        <FilmOverlay />
+        {/* <FilmOverlay /> */}
         <SiteLogo />
 
         {/* question */}
