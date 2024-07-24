@@ -29,7 +29,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
       url: "/genre/comedy.gif",
       answer: ["fun", "upbeat", "cheerful", "playful"],
     },
-    { url: "/genre/comedy.gif", answer: ["scary", "fear", "tense"] },
+    { url: "/genre/horror.gif", answer: ["scary", "fear", "tense"] },
     { url: "/genre/fantasy.gif", answer: ["magical", "adventurous"] },
     {
       url: "/genre/drama.gif",
@@ -98,6 +98,9 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* border
+      <div className="absolute z-10 w-8 h-8 border-t-3 border-l-3 border-white" /> */}
 
       {/* footer & buttons */}
       <div className="flex justify-between">

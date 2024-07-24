@@ -74,6 +74,11 @@ body {
     color: #FBFF37 !important;
   }
 }
+.activeGenre {
+  .swiper-slide-visible {
+    color: #FBFF37 !important;
+  }
+}
 
 .swiper-slide {
   display: flex;
@@ -83,6 +88,8 @@ body {
   color: #fff;
 }
 
+
+/* font style */
 .welcome-text-stroke{
   -webkit-text-stroke: 1px #FE65C5;
   color: transparent;
