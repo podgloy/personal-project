@@ -52,7 +52,7 @@ export default function WelcomeScreen() {
   return (
     <div
       id="welcome-screen-wrapper"
-      className="relative h-screen flex flex-col pt-16 bg-[#155FCB] overflow-hidden"
+      className="relative h-screen flex flex-col pt-6 bg-[#155FCB] overflow-hidden"
     >
       <div className="px-5">
         <SiteLogo className="down-ele" />
