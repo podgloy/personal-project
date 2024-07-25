@@ -60,9 +60,17 @@ body {
 }
 
 .myGenreSwiper {
-  width: full;
   height: 361px;
+  .slide-frame{
+    @apply opacity-0 duration-300;
+  }
+  .swiper-slide-active{
+    .slide-frame{
+      @apply !opacity-100 duration-300;
+    }
+  }
 }
+
 
 
 .myFontSwiper{

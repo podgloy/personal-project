@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import FilmOverlay from "./FilmOverlay";
 import SiteLogo from "./SiteLogo";
+import domtoimage from "@intactile/dom-to-image-next";
+import { saveAs } from "file-saver";
+import Link from "next/link";
 
 export default function ResultScreen({
   className,
@@ -23,14 +26,17 @@ export default function ResultScreen({
       audio.play();
     }
   }, [isActive]);
-  // video recording
+  // video recording [faied on mobile]
   const [recorder, setRecorder] = useState(null);
   const [displayMedia, setDisplayMedia] = useState(null);
   const startScreenRecording = async () => {
+    alert("click");
+
     try {
       // Prompt the user to select a screen or window to share
       const stream = await navigator.mediaDevices.getDisplayMedia({
         video: { mediaSource: "screen" },
+        audio: true,
       });
 
       const newRecorder = new MediaRecorder(stream);
@@ -70,15 +76,63 @@ export default function ResultScreen({
         newRecorder.stop();
       }, 10000); // 10 seconds
     } catch (err) {
+      alert(err, "error");
       console.error("Error: " + err);
     }
   };
+  // screen capture
+  function captureToFile() {
+    domtoimage
+      .toBlob(document.querySelector(".capture-screen"))
+      .then((blob) => {
+        // Save the image file and return a promise
+        return new Promise((resolve, reject) => {
+          window.saveAs(blob, "my-screen.png");
+          // Resolve the promise after a short delay to ensure the file save dialog appears
+          setTimeout(resolve, 1000); // Adjust the delay as needed
+        });
+      })
+      .then(() => {
+        // Navigate to Instagram story camera
+        window.location.href = "instagram://story-camera";
+      })
+      .catch((error) => {
+        console.error("An error occurred while capturing the screen:", error);
+      });
+  }
+  // socials share
+  let shareURL = "personal-project-six-opal.vercel.app";
+  let shareTitle = "Soundtrack of Life";
+  let socials = [
+    {
+      text: "facebook",
+      link: `https://www.facebook.com/sharer/sharer.php?u=${shareURL}&t=${shareTitle}`,
+    },
+    {
+      text: "facebook messenger",
+      link: `https://www.addtoany.com/add_to/facebook_messenger?linkurl=${shareURL}&linkname=${shareTitle}&linknote=${shareTitle}`,
+    },
+    {
+      text: "twitter",
+      link: `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareURL}`,
+    },
+    {
+      text: "line",
+      link: `https://social-plugins.line.me/lineit/share?url=${shareURL}`,
+    },
+  ];
+
   return (
     <div
       id={id}
       className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
     >
-      <button onClick={startScreenRecording}>Start 10s Screen Recording</button>
+      {/* <button onClick={captureToFile}>share result to instagram</button> */}
+      {socials.map((social, index) => (
+        <Link key={index} href={social.link} target="_blank">
+          {`${social.text} >>`}
+        </Link>
+      ))}
       {/* header */}
 
       <FilmOverlay />
@@ -125,7 +179,7 @@ export default function ResultScreen({
       </div>
 
       {/* share & download */}
-      <button className="flex justify-center">
+      <button onClick={captureToFile} className="flex justify-center">
         <div className="button-shadow absolute right-32 bottom-16 h-7 w-9 bg-[#FE65C5] rounded-full" />
         <p className="absolute allenoire bottom-8 right-32 text-sm text-center">
           SHARE

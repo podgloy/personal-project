@@ -45,7 +45,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
       <div className="px-5">
         <FilmOverlay />
         <SiteLogo />
-        <div className="pt-8">
+        <div className="py-8">
           {/* question */}
           <div>
             <h2 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
@@ -70,55 +70,41 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           </div>
         </div>
       </div>
-
-      {/* <img
-        className="absolute pl-16 py-60 top-32 bottom-20 h-full z-10"
-        src="/focusleft.svg"
-      /> */}
-
-      <div className="grid justify-between">
-        <div className="grid justify-items-stretch space-x-20 justify-between">
-          <div className="absolute z-10 w-6 h-6 border-white border-l-2 border-t-2 " />
-          <div className="absolute z-10 w-6 h-6 border-white border-r-2 border-t-2" />
-        </div>
-
-        <div className="grid justify-items-stretch space-x-20 justify-between">
-          <div className="absolute z-10 w-6 h-6 border-white border-l-2 border-b-2" />
-          <div className="absolute z-10 w-6 h-6 border-white border-r-2 border-b-2" />
-        </div>
-
-        {/* swiper */}
-        <Swiper
-          onSwiper={setSwiper}
-          onSlideChange={() => getImageValue()}
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={1.4}
-          spaceBetween={25}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 150,
-            modifier: 1,
-            scale: 1.3,
-            slideShadows: true,
-          }}
-          pagination={false}
-          modules={[EffectCoverflow, Pagination]}
-          className="myGenreSwiper w-full !pt-4"
-        >
-          {images.map((image, i) => (
-            <SwiperSlide key={`slide-${i}`}>
-              <img className="h-full w-full object-cover" src={image.url} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        {/* border
-      <div className="absolute z-10 w-8 h-8 border-t-3 border-l-3 border-white" /> */}
-        {/* footer & buttons */}
-        <NavButtons onNext={onNext} />
-      </div>
+      {/* swiper */}
+      <Swiper
+        onSwiper={setSwiper}
+        onSlideChange={() => getImageValue()}
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={1.4}
+        spaceBetween={25}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
+          scale: 1.3,
+          slideShadows: true,
+        }}
+        pagination={false}
+        modules={[EffectCoverflow, Pagination]}
+        className="myGenreSwiper w-full !pt-4 "
+      >
+        {images.map((image, i) => (
+          <SwiperSlide key={`slide-${i}`} className="relative">
+            <img className="h-full w-full object-cover" src={image.url} />
+            <div className="slide-frame absolute top-0 left-0 w-full h-full z-10">
+              <div className="top-4 left-4 w-8 h-8 border-white border-2 absolute"></div>
+              <div className="top-4 right-4 w-8 h-8 border-white border-2 absolute"></div>
+              <div className="bottom-4 left-4 w-8 h-8 border-white border-2 absolute"></div>
+              <div className="bottom-4 right-4 w-8 h-8 border-white border-2 absolute"></div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {/* footer & buttons */}
+      <NavButtons onNext={onNext} />
     </div>
   );
 }
