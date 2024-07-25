@@ -5,6 +5,7 @@ import FilmOverlay from "./FilmOverlay";
 import SiteLogo from "./SiteLogo";
 import domtoimage from "@intactile/dom-to-image-next";
 import { saveAs } from "file-saver";
+import Link from "next/link";
 
 export default function ResultScreen({
   className,
@@ -99,13 +100,39 @@ export default function ResultScreen({
         console.error("An error occurred while capturing the screen:", error);
       });
   }
+  // socials share
+  let shareURL = "personal-project-six-opal.vercel.app";
+  let shareTitle = "Soundtrack of Life";
+  let socials = [
+    {
+      text: "facebook",
+      link: `https://www.facebook.com/sharer/sharer.php?u=${shareURL}&t=${shareTitle}`,
+    },
+    {
+      text: "facebook messenger",
+      link: `https://www.addtoany.com/add_to/facebook_messenger?linkurl=${shareURL}&linkname=${shareTitle}&linknote=${shareTitle}`,
+    },
+    {
+      text: "twitter",
+      link: `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareURL}`,
+    },
+    {
+      text: "line",
+      link: `https://social-plugins.line.me/lineit/share?url=${shareURL}`,
+    },
+  ];
 
   return (
     <div
       id={id}
       className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
-      <button onClick={captureToFile}>share to instagram</button>
+      <button onClick={captureToFile}>share result to instagram</button>
+      {socials.map((social, index) => (
+        <Link key={index} href={social.link} target="_blank">
+          {`${social.text} >>`}
+        </Link>
+      ))}
       {/* header */}
       <div className="px-5">
         {/* <SiteLogo /> */}
