@@ -83,7 +83,18 @@ export default function ResultScreen({
   function captureToFile() {
     domtoimage
       .toBlob(document.querySelector(".capture-screen"))
-      .then((blob) => window.saveAs(blob, "my-screen.png"));
+      .then((blob) => {
+        // Save the image file
+        window.saveAs(blob, "my-screen.png");
+        // Add a slight delay to ensure the file save dialog appears before navigating
+        setTimeout(() => {
+          // Navigate to Instagram story camera
+          window.location.href = "instagram://story-camera";
+        }, 500); // Adjust the delay as needed
+      })
+      .catch((error) => {
+        console.error("An error occurred while capturing the screen:", error);
+      });
   }
 
   return (
@@ -91,7 +102,7 @@ export default function ResultScreen({
       id={id}
       className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
-      <button onClick={captureToFile}>captureToFile</button>
+      <button onClick={captureToFile}>share to instagram</button>
       {/* header */}
       <div className="px-5">
         {/* <SiteLogo /> */}
