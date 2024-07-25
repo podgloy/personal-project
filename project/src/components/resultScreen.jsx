@@ -123,7 +123,7 @@ export default function ResultScreen({
     },
     {
       text: "line",
-      link: `https://social-plugins.line.me/lineit/share?url=${shareURL}`,
+      link: `https://social-plugins.line.me/lineit/share?url=https://${shareURL}`,
     },
   ];
 
@@ -177,10 +177,10 @@ export default function ResultScreen({
       </audio>
 
       {/* image-gen */}
-      <div className="relative w-full">
-        {/* <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} /> */}
+      <div className="relative animate-spin w-full">
+        {/* <img className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]" src={imageResult} /> */}
         <img
-          className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
+          className="absolute animate-spi -left-[7vw] mt-32 z-0 w-[65vw]"
           src="/catttt.png"
         />
         <img className="relative z-0 pr-6 w-full" src="/resultVinyl.png" />
