@@ -43,7 +43,7 @@ export default function ColorScreen({
   }
 
   return (
-    <div id={id} className={` bg-[#FE6F42]  ${className}`}>
+    <div id={id} className={`bg-[#FE6F42]  ${className}`}>
       <div className="px-5">
         {/* Header */}
         <FilmOverlay />

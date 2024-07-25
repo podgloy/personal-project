@@ -17,9 +17,9 @@ export default function QuizSection() {
 
   const [isLoading, setIsLoading] = useState(false);
   const quizComponents = [
-    GenreScreen,
-    ColorScreen,
-    FontScreen,
+    // GenreScreen,
+    // ColorScreen,
+    // FontScreen,
     TaglineScreen,
     LoadingStage,
     ResultScreen,

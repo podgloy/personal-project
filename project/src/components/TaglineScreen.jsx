@@ -2,6 +2,7 @@
 import { useState } from "react";
 import SiteLogo from "./SiteLogo";
 import FilmOverlay from "./FilmOverlay";
+import NavButtons from "./NavButtons";
 
 export default function TaglineScreen({
   className,
@@ -18,17 +19,13 @@ export default function TaglineScreen({
     onSelect("tagline", val);
   }
   return (
-    <div
-      id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#FF60B3] bg-contain flex flex-col pt-16 ${className}`}
-    >
+    <div id={id} className={`bg-[#FF60B3] ${className}`}>
       {/* header */}
       <div className="px-5">
         {/* <FilmOverlay /> */}
         <SiteLogo />
-
         {/* question */}
-        <div className="pt-16">
+        <div className="py-8">
           <h2 className="made-dillan text-[#FFF9C5] text-4xl font-bold">
             What word
           </h2>
@@ -45,17 +42,18 @@ export default function TaglineScreen({
             LINE
           </h2>
         </div>
-
+      </div>
+      {/* input */}
+      <div className="px-5 h-full">
         {/* placeholder */}
         <input
-          className="mt-12 placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
+          className="placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md px-6 py-5 focus:border-[#00CCFD]"
           placeholder="type something..."
           name="input"
           type="text"
           onChange={(e) => onType(e.target.value)}
           value={tag}
         />
-
         {/* choice */}
         <div className="flex flex-row space-x-2 pt-4">
           {suggestions.map((suggestion) => (
@@ -71,31 +69,8 @@ export default function TaglineScreen({
           ))}
         </div>
       </div>
-
       {/* button */}
-      <div className="">
-        <button
-          onClick={onBack}
-          className="absolute p-5 flex space-x-3 items-center"
-        >
-          <img className="w-8 rotate-180" src="/arrow2.svg" />
-          <span className="font-medium text-white"> back </span>
-        </button>
-
-        {/* footer & buttons */}
-        <div className="flex justify-between">
-          <img className="absolute left-5 bottom-16" src="dots.svg" />
-          <div className="absolute bottom-6 right-0">
-            <button
-              onClick={onNext}
-              className="p-5 flex space-x-3 items-center"
-            >
-              <div className="border-2 border-white rounded-full w-11 h-11" />
-              <img className="absolute left-4" src="/arrow8.svg" />
-            </button>
-          </div>
-        </div>
-      </div>
+      <NavButtons onNext={onNext} />
     </div>
   );
 }
