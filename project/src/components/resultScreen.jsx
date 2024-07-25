@@ -80,6 +80,11 @@ export default function ResultScreen({
       console.error("Error: " + err);
     }
   };
+
+  const handleRestart = () => {
+    window.location.reload();
+  };
+
   // screen capture
   function captureToFile() {
     domtoimage
@@ -188,7 +193,7 @@ export default function ResultScreen({
           SHARE
         </p>
       </button>
-      <button className="content-center">
+      <button onClick={handleRestart} className="content-center">
         <div className="button-shadow absolute right-12 bottom-16 h-7 w-9 bg-[#FE65C5] rounded-full" />
         <p className="absolute allenoire bottom-8 right-8 text-sm text-center">
           RESTART
