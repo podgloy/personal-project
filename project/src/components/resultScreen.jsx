@@ -81,10 +81,10 @@ export default function ResultScreen({
       <button onClick={startScreenRecording}>Start 10s Screen Recording</button>
       {/* header */}
       <div className="px-5">
-        <SiteLogo />
+        {/* <SiteLogo /> */}
         <FilmOverlay />
       </div>
-      <h2 className="pt-16 made-dillan text-white text-2xl text-center">
+      <h2 className="pt-8 made-dillan text-white text-2xl text-center">
         SOUNDTRACK
       </h2>
       <h2 className="pt-4 made-dillan text-white text-5xl text-center">
@@ -104,16 +104,23 @@ export default function ResultScreen({
       </audio>
 
       {/* image-gen */}
-      <div className="relative mt-8 w-full">
+      <div className="relative mt-6 w-full">
         <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} />
-        {/* <img className="absolute pt-40 z-0 w-[60%]" src="/catttt.png" /> */}
         <img className="relative z-10 w-full" src="/resultVinyl.png" />
       </div>
 
       {/* share & download */}
-      <button>
-        <div className="absolute right-5 bottom-16 h-10 w-10 bg-white rounded-full" />
-        <div className="absolute right-20 bottom-16 h-10 w-10 bg-white rounded-full" />
+      <button className="flex justify-center">
+        <div className="button-shadow absolute right-36 bottom-20 h-12 w-12 bg-[#FE65C5] rounded-full" />
+        <p className="absolute allenoire bottom-12 right-36 text-sm text-center">
+          SHARE
+        </p>
+      </button>
+      <button className="content-center">
+        <div className="button-shadow absolute right-12 bottom-20 h-12 w-12 bg-[#FE65C5] rounded-full" />
+        <p className="absolute allenoire bottom-12 right-8 text-sm text-center">
+          RESTART
+        </p>
       </button>
 
       {/* back button */}

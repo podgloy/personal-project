@@ -81,25 +81,35 @@ export default function FontScreen({
           <h2 className="allenoire text-7xl text-[#FCFF62] tracking-wider text-shadow-yellow pt-3 text-right">
             FONT
           </h2>
-
           <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
             would be used for
           </h2>
         </div>
 
         {/* the end screen */}
-        <div className="mt-6 text-center h-56 bg-white rounded-md flex items-center justify-center">
-          <h3 className={`text-6xl text-gray-800 ${selectedFont}`}>The End</h3>
+        <div>
+          <img
+            className="w-full mt-4 rounded-md flex items-center justify-center"
+            src="/cinema.png"
+          />
+          <h3
+            className={`bolder absolute top-[47%] left-[25%] text-center text-6xl text-[#FFCEB9] ${selectedFont}`}
+          >
+            The End
+          </h3>
         </div>
+        {/* </div> */}
       </div>
 
       {/* question text */}
       <h2 className="mt-6 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
         of your life?
       </h2>
+
       {/* scroller */}
-      <div className="relative mt-4">
+      <div className="relative mt-6">
         <img className="absolute top-0 w-full" src="/scroller-active.png" />
+
         {/* scroller text */}
         <Swiper
           onSlideChange={handleSlideChange}

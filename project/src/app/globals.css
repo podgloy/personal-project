@@ -123,8 +123,22 @@ body {
   font-weight: 700;
 }
 
+.button-shadow {
+  filter: drop-shadow(4px 2px #B9FF46);
+  border-color: #B9FF46;
+  border-width: 2px;
+  fill: #B9FF46;
+}
+
 
 /* Font screen  */
+.bolder {
+  text-shadow: 3px 1px 2px #000000;
+  -webkit-text-stroke: 1px #000000;
+  paint-order: stroke fill;
+
+}
+
 .DM_Serif_Display{
   font-family: '__DM_Serif_Display_fb0d26', serif !important;
 }
@@ -138,6 +152,7 @@ body {
   font-family: "Reenie Beanie", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 80px;
 }
 .Dancing_Script {
   font-family: "Dancing Script", cursive;

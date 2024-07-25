@@ -13,6 +13,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   useEffect(() => {
     onSelect("genre", images[0].answer);
   }, []);
+
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
     const selectedImage = images[activeIndex];
@@ -70,6 +71,11 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           </h2>
         </div>
       </div>
+
+      <div className="absolute z-10 w-6 h-6 border-white border-l-4 border-t-4 left-20 top-[53vh]" />
+      <div className="absolute z-10 w-6 h-6 border-white border-r-4 border-t-4 right-20 top-[53vh]" />
+      <div className="absolute z-10 w-6 h-6 border-white border-l-4 border-b-4 left-20 bottom-[16vh]" />
+      <div className="absolute z-10 w-6 h-6 border-white border-r-4 border-b-4 right-20 bottom-[16vh]" />
 
       {/* swiper */}
       <Swiper

@@ -11,7 +11,7 @@ export default function TaglineScreen({
   onSelect,
 }) {
   const [tag, setTag] = useState("");
-  const suggestions = ["love", "inspiration", "joy"];
+  const suggestions = ["Inspired", "Love Story", "Peaceful"];
 
   function onType(val) {
     setTag(val);
@@ -24,7 +24,7 @@ export default function TaglineScreen({
     >
       {/* header */}
       <div className="px-5">
-        {/* <FilmOverlay /> */}
+        <FilmOverlay />
         <SiteLogo />
 
         {/* question */}
@@ -48,7 +48,7 @@ export default function TaglineScreen({
 
         {/* placeholder */}
         <input
-          className="mt-12 placeholder:italic placeholder:text-white placeholder:text-l block bg-transparent w-full border border-white rounded-md py-6 pl-7 pr-5 focus:border-[#00CCFD]"
+          className="made-dillan mt-12 placeholder:italic placeholder:text-white placeholder:opacity-70 placeholder:text-2xl tracking-wider text-center text-2xl block bg-transparent w-full border border-white rounded-md py-6 px-[1/2] pr-5 focus:border-[#00CCFD]"
           placeholder="type something..."
           name="input"
           type="text"
@@ -57,13 +57,13 @@ export default function TaglineScreen({
         />
 
         {/* choice */}
-        <div className="flex flex-row space-x-2 pt-4">
+        <div className="flex flex-row space-x-3 pt-5">
           {suggestions.map((suggestion) => (
             <div
               key={suggestion}
               onClick={() => onType(suggestion)}
-              className={`bg-white text-white text-sm px-3 py-1 rounded-md duration-200 ${
-                suggestion === tag ? "bg-opacity-50" : "bg-opacity-35"
+              className={`made-dillan bg-white text-white text-lg px-3 py-1 rounded-lg duration-200 ${
+                suggestion === tag ? "bg-opacity-40" : "bg-opacity-25"
               }`}
             >
               {suggestion}
