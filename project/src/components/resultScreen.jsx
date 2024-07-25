@@ -88,7 +88,7 @@ export default function ResultScreen({
         SOUNDTRACK
       </h2>
       <h2 className="pt-4 made-dillan text-white text-5xl text-center">
-        {`of ........ 's life`}
+        {`of ......... 's life`}
       </h2>
 
       {/* music-gen */}
