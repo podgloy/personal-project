@@ -133,6 +133,11 @@ body {
   border-width: 2px;
   fill: #B9FF46;
 }
+.nav-shadow {
+  filter: drop-shadow(3px 3px #000000);
+  border-color: #000000;
+  border-width: 2px;
+}
 
 
 /* Font screen  */
@@ -179,4 +184,12 @@ body {
   to {
       transform:rotate(360deg);
   }
+}
+
+/* navigation */
+.redNav {
+  filter: drop-shadow(3px 2px #CC0000);
+  border-color: #CC0000;
+  border-width: 2px;
+  fill: #FFCB00;
 }

@@ -70,6 +70,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           </div>
         </div>
       </div>
+
       {/* swiper */}
       <Swiper
         onSwiper={setSwiper}
@@ -103,8 +104,17 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
       {/* footer & buttons */}
-      <NavButtons onNext={onNext} />
+      <div className="flex justify-between p-5">
+        <div className="pt-4 flex flex-row justify-between space-x-2 align-baseline">
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3]" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+        </div>
+        <NavButtons onNext={onNext} />
+      </div>
     </div>
   );
 }

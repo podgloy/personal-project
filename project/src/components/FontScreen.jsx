@@ -130,8 +130,16 @@ export default function FontScreen({
         </div>
       </div>
 
-      {/* button */}
-      <NavButtons onNext={onNext} />
+      {/* footer & buttons */}
+      <div className="flex justify-between p-5">
+        <div className="pt-4 flex flex-row justify-between space-x-2 align-baseline">
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3]" />
+          <div className="w-2 h-2 rounded-full bg-[#E3E3E3] opacity-40" />
+        </div>
+        <NavButtons onNext={onNext} />
+      </div>
     </div>
   );
 }

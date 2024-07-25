@@ -178,11 +178,14 @@ export default function ResultScreen({
 
       {/* image-gen */}
       <div className="relative w-full">
-        {/* <img className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]" src={imageResult} /> */}
         <img
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
-          src="/catttt.png"
+          src={imageResult}
         />
+        {/* <img
+          className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
+          src="/catttt.png"
+        /> */}
         <img className="relative z-0 pr-6 w-full" src="/resultVinyl.png" />
       </div>
 

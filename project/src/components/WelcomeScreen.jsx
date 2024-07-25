@@ -76,7 +76,7 @@ export default function WelcomeScreen() {
 
       {/* icon */}
       <div className="up-ele flex flex-col space-y-4 relative bottom-4 z-10">
-        <span className="text-white text-center">scroll down</span>
+        <span className="made-dillan text-white text-center">scroll down</span>
         <img className="h-8 animate-bounce" src="arrow.svg" />
       </div>
     </div>
@@ -92,12 +92,12 @@ function WelcomeMessage({ addedClass = 10 }) {
         SOUND
       </h1>
       <h1
-        className={`down-ele absolute top-72 left-32 font-bold text-7xl text-[#FE65C5] allenoire ${addedClass}`}
+        className={`down-ele absolute top-72 left-28 font-bold text-7xl text-[#FE65C5] allenoire ${addedClass}`}
       >
         TRACK
       </h1>
       <div
-        className={`made-dillan down-ele absolute pt-80 right-8 font-bold text-4xl text-white`}
+        className={`made-dillan down-ele absolute pt-80 top-12 right-8 font-bold text-4xl text-white`}
       >
         of life
       </div>

@@ -1,12 +1,11 @@
 const NavButtons = ({ onNext }) => {
   return (
-    <div className="flex justify-between p-5">
-      <img src="dots.svg" />
+    <div>
       <button
         onClick={onNext}
-        className="p-5 flex justify-center items-center border-2 border-white rounded-full w-11 h-11"
+        className="nav-shadow hover:bg-[#E7D69A] filter drop-shadow-lg  p-5 flex justify-center items-center bg-[#FFE792] border-2 border-white rounded-full w-14 h-8"
       >
-        <img src="/arrow8.svg" />
+        <img src="/blackarrow.svg" />
       </button>
     </div>
   );
