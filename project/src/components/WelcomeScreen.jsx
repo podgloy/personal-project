@@ -66,7 +66,7 @@ export default function WelcomeScreen() {
       <div className="w-full h-full relative z-0">
         <img
           id="vinyl-img"
-          className="absolute top-24 -left-[340px] size-[640px] object-contain"
+          className="absolute top-24 -left-[290px] size-[580px] object-contain"
           src="/vinyl.png"
         />
       </div>

@@ -45,7 +45,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
       <div className="px-5">
         <FilmOverlay />
         <SiteLogo />
-        <div className="py-8">
+        <div className="pt-8">
           {/* question */}
           <div>
             <h2 className="made-dillan text-[#D2F9FF] text-4xl font-bold">
@@ -55,12 +55,13 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
               were a movie,
             </h2>
           </div>
+
           {/* 2nd paragraph */}
           <div className="pt-5">
             <h2 className="made-dillan text-[#D2F9FF] text-3xl font-bold text-right">
               What
             </h2>
-            <h2 className="allenoire text-7xl text-[#FFCB00] tracking-wider text-shadow-red pt-3 text-right">
+            <h2 className="allenoire text-6xl text-[#FFCB00] tracking-wider text-shadow-red pt-3 text-right">
               GENRE
             </h2>
             <h2 className="made-dillan text-right text-[#D2F9FF] text-3xl font-bold">
@@ -70,42 +71,54 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
         </div>
       </div>
 
-      <div className="absolute z-10 w-6 h-6 border-white border-l-4 border-t-4 left-20 top-[53vh]" />
-      <div className="absolute z-10 w-6 h-6 border-white border-r-4 border-t-4 right-20 top-[53vh]" />
-      <div className="absolute z-10 w-6 h-6 border-white border-l-4 border-b-4 left-20 bottom-[16vh]" />
-      <div className="absolute z-10 w-6 h-6 border-white border-r-4 border-b-4 right-20 bottom-[16vh]" />
+      {/* <img
+        className="absolute pl-16 py-60 top-32 bottom-20 h-full z-10"
+        src="/focusleft.svg"
+      /> */}
 
-      {/* swiper */}
-      <Swiper
-        onSwiper={setSwiper}
-        onSlideChange={() => getImageValue()}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={1.4}
-        spaceBetween={25}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          scale: 1.3,
-          slideShadows: true,
-        }}
-        pagination={false}
-        modules={[EffectCoverflow, Pagination]}
-        className="myGenreSwiper w-full !pt-10"
-      >
-        {images.map((image, i) => (
-          <SwiperSlide key={`slide-${i}`}>
-            <img className="h-full w-full object-cover" src={image.url} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {/* border
+      <div className="grid justify-between">
+        <div className="grid justify-items-stretch space-x-20 justify-between">
+          <div className="absolute z-10 w-6 h-6 border-white border-l-2 border-t-2 " />
+          <div className="absolute z-10 w-6 h-6 border-white border-r-2 border-t-2" />
+        </div>
+
+        <div className="grid justify-items-stretch space-x-20 justify-between">
+          <div className="absolute z-10 w-6 h-6 border-white border-l-2 border-b-2" />
+          <div className="absolute z-10 w-6 h-6 border-white border-r-2 border-b-2" />
+        </div>
+
+        {/* swiper */}
+        <Swiper
+          onSwiper={setSwiper}
+          onSlideChange={() => getImageValue()}
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={1.4}
+          spaceBetween={25}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 150,
+            modifier: 1,
+            scale: 1.3,
+            slideShadows: true,
+          }}
+          pagination={false}
+          modules={[EffectCoverflow, Pagination]}
+          className="myGenreSwiper w-full !pt-4"
+        >
+          {images.map((image, i) => (
+            <SwiperSlide key={`slide-${i}`}>
+              <img className="h-full w-full object-cover" src={image.url} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {/* border
       <div className="absolute z-10 w-8 h-8 border-t-3 border-l-3 border-white" /> */}
-      {/* footer & buttons */}
-      <NavButtons onNext={onNext} />
+        {/* footer & buttons */}
+        <NavButtons onNext={onNext} />
+      </div>
     </div>
   );
 }

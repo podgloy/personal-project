@@ -76,34 +76,33 @@ export default function ResultScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
+      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
     >
       <button onClick={startScreenRecording}>Start 10s Screen Recording</button>
       {/* header */}
-      <div className="px-5">
-        {/* <SiteLogo /> */}
-        <FilmOverlay />
-      </div>
-      <h2 className="allenoire pt-8 made-dillan text-[#FE65C5] text-3xl text-center">
+
+      <FilmOverlay />
+
+      <h2 className="allenoire pt-4 made-dillan text-[#FE65C5] text-3xl text-center">
         SOUNDTRACK
       </h2>
 
-      <div className="flex flex-row space-x-4">
+      <div className="flex flex-row justify-center">
         <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
           of
         </h2>
-        <div className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+        <div className="allenoire pt-2 made-dillan text-white text-3xl text-center">
           <input
-            className="allenoire w-60 placeholder:italic placeholder:underline focus:placeholder-transparent placeholder:text-[#B9FF46] placeholder:text-4xl text-center text-4xl uppercase text-[#B9FF46] bg-transparent py-2 px-[1/2]"
-            placeholder="enter name"
+            className="allenoire w-44 placeholder:italic placeholder:underline focus:placeholder-transparent placeholder:text-[#B9FF46] placeholder:text-4xl text-center text-4xl uppercase text-[#B9FF46] bg-transparent py-1 px-[1/2]"
+            placeholder="your...."
             name="input"
             type="text"
-            maxLength="8"
+            maxLength="6"
           />
-          <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
-            life
-          </h2>
         </div>
+        <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+          life
+        </h2>
       </div>
 
       {/* music-gen */}
@@ -119,32 +118,24 @@ export default function ResultScreen({
       </audio>
 
       {/* image-gen */}
-      <div className="relative mt-6 w-full">
-        <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} />
-        <img className="relative z-10 w-full" src="/resultVinyl.png" />
+      <div className="relative w-full">
+        {/* <img className="absolute pt-40 z-0 w-[60%]" src={imageResult} /> */}
+        <img className="absolute pt-32 z-0 w-[65%]" src="/catttt.png" />
+        <img className="relative z-0 pr-6 w-full" src="/resultVinyl.png" />
       </div>
 
       {/* share & download */}
       <button className="flex justify-center">
-        <div className="button-shadow absolute right-36 bottom-20 h-12 w-12 bg-[#FE65C5] rounded-full" />
-        <p className="absolute allenoire bottom-12 right-36 text-sm text-center">
+        <div className="button-shadow absolute right-32 bottom-16 h-7 w-9 bg-[#FE65C5] rounded-full" />
+        <p className="absolute allenoire bottom-8 right-32 text-sm text-center">
           SHARE
         </p>
       </button>
       <button className="content-center">
-        <div className="button-shadow absolute right-12 bottom-20 h-12 w-12 bg-[#FE65C5] rounded-full" />
-        <p className="absolute allenoire bottom-12 right-8 text-sm text-center">
+        <div className="button-shadow absolute right-12 bottom-16 h-7 w-9 bg-[#FE65C5] rounded-full" />
+        <p className="absolute allenoire bottom-8 right-8 text-sm text-center">
           RESTART
         </p>
-      </button>
-
-      {/* back button */}
-      <button
-        onClick={onBack}
-        className="absolute bottom-8 p-5 flex space-x-3 items-center"
-      >
-        <img className="w-8 rotate-180" src="/arrow2.svg" />
-        <span className="font-medium text-black"> back </span>
       </button>
     </div>
   );

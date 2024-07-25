@@ -49,11 +49,11 @@ export default function ColorScreen({
         <FilmOverlay />
         <SiteLogo />
         {/* Question */}
-        <div className="py-8">
+        <div className="pt-8">
           <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
           </h2>
-          <h2 className="text-7xl text-[#87FFF1] allenoire tracking-wider text-shadow-blue pt-3">
+          <h2 className="text-6xl text-[#87FFF1] allenoire tracking-wider text-shadow-blue pt-3">
             COLOR
           </h2>
           <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
@@ -77,7 +77,7 @@ export default function ColorScreen({
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
-        className="!w-full !h-auto !max-w-[70%]"
+        className="!w-full !h-auto !max-w-[70%] !pt-4"
       >
         {images.map((image, i) => (
           <SwiperSlide key={`slide-${i}`} className="!h-fit">

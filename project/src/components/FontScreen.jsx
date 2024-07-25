@@ -70,37 +70,42 @@ export default function FontScreen({
         {/* header */}
         <FilmOverlay />
         <SiteLogo />
+
         {/* question */}
-        <div className="py-8">
-          <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
+        <div className="pt-8 pb-3">
+          <h2 className="made-dillan text-[#C9FFC8] text-3xl font-bold text-right">
             What
           </h2>
-          <h2 className="allenoire text-7xl text-[#FCFF62] tracking-wider text-shadow-yellow pt-3 text-right">
+          <h2 className="allenoire text-6xl text-[#FCFF62] tracking-wider text-shadow-yellow pt-3 text-right">
             FONT
           </h2>
-          <h2 className="made-dillan text-[#C9FFC8] text-4xl font-bold text-right">
+          <h2 className="made-dillan text-[#C9FFC8] text-3xl font-bold text-right">
             would be used for
           </h2>
         </div>
       </div>
+
       {/* Swiper */}
       <div className="h-full flex flex-col justify-around ">
         {/* the end screen */}
         <div
-          className="text-center  h-full rounded-md flex items-center justify-center mx-5 p-5 bg-cover"
+          className="text-center h-full rounded-md flex items-center justify-center mx-5 bg-cover"
           style={{ backgroundImage: 'url("/cinema.png")' }}
         >
           <h3 className={`text-6xl ${selectedFont} text-[#FFCEB9] bolder`}>
             The End
           </h3>
         </div>
+
         {/* question text */}
-        <h2 className="my-4 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
+        <h2 className="pt-2 pb-4 made-dillan text-[#C9FFC8] text-2xl font-bold text-center">
           of your life?
         </h2>
+
         {/* scroller */}
-        <div className="relative  flex flex-col justify-end pb-12">
+        <div className="relative flex flex-col justify-end pb-12">
           <img className="w-full object-contain " src="/scroller-active.png" />
+
           {/* scroller text */}
           <Swiper
             onSlideChange={handleSlideChange}
@@ -116,7 +121,7 @@ export default function FontScreen({
                 key={`font-slide-${i}`}
                 className="!flex !flex-col !justify-end"
               >
-                <h4 className="font-bold text-3xl made-dillan text-center duration-300">
+                <h4 className="font-bold text-2xl made-dillan text-center duration-300">
                   {font.text}
                 </h4>
               </SwiperSlide>
@@ -124,6 +129,7 @@ export default function FontScreen({
           </Swiper>
         </div>
       </div>
+
       {/* button */}
       <NavButtons onNext={onNext} />
     </div>

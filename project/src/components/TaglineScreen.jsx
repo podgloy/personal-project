@@ -24,6 +24,7 @@ export default function TaglineScreen({
       <div className="px-5">
         <FilmOverlay />
         <SiteLogo />
+
         {/* question */}
         <div className="py-8">
           <h2 className="made-dillan text-[#FFF9C5] text-4xl font-bold">
@@ -43,6 +44,7 @@ export default function TaglineScreen({
           </h2>
         </div>
       </div>
+
       {/* input */}
       <div className="px-5 h-full">
         {/* placeholder */}
@@ -51,16 +53,18 @@ export default function TaglineScreen({
           placeholder="type something..."
           name="input"
           type="text"
+          maxLength={15}
           onChange={(e) => onType(e.target.value)}
           value={tag}
         />
+
         {/* choice */}
         <div className="flex flex-row flex-wrap pt-5">
           {suggestions.map((suggestion) => (
             <div
               key={suggestion}
               onClick={() => onType(suggestion)}
-              className={`made-dillan bg-white text-white text-lg px-3 py-1 mr-2 mb-2 rounded-lg duration-200 ${
+              className={`made-dillan bg-white text-white text-md px-3 py-1 mr-2 mb-2 rounded-lg duration-200 ${
                 suggestion === tag ? "bg-opacity-40" : "bg-opacity-25"
               }`}
             >
