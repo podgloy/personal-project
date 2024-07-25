@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="text-white bg-zinc-900">
       <LenisProvider>
-        {isShowWelcomeScreen ? <WelcomeScreen /> : null}
+        {/* {isShowWelcomeScreen ? <WelcomeScreen /> : null} */}
         <QuizSection />
       </LenisProvider>
     </main>

@@ -148,7 +148,9 @@ export default function QuizSection() {
         <Quiz
           key={i}
           className={
-            currentQuiz === i ? "z-10" : "pointer-events-none z-0 opacity-0"
+            currentQuiz === i
+              ? "z-10"
+              : "pointer-events-none z-0 opacity-0 overflow-hidden"
           }
           id={`quiz-${i}`}
           onNext={() => next()}
