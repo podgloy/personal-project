@@ -7,6 +7,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import { useState, useEffect } from "react";
 import SiteLogo from "./SiteLogo";
 import FilmOverlay from "./FilmOverlay";
+import NavButtons from "./NavButtons";
 
 export default function GenreScreen({ className, id, onNext, onSelect }) {
   const [swiper, setSwiper] = useState(null);
@@ -38,10 +39,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   ];
 
   return (
-    <div
-      id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#38A04A] flex flex-col pt-6 ${className}`}
-    >
+    <div id={id} className={`bg-[#38A04A] ${className}`}>
       {/* header */}
       <div className="px-5">
         <FilmOverlay />
@@ -100,15 +98,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
       {/* border
       <div className="absolute z-10 w-8 h-8 border-t-3 border-l-3 border-white" /> */}
       {/* footer & buttons */}
-      <div className="flex justify-between p-5">
-        <img src="dots.svg" />
-        <button
-          onClick={onNext}
-          className="p-5 flex justify-center items-center border-2 border-white rounded-full w-11 h-11"
-        >
-          <img src="/arrow8.svg" />
-        </button>
-      </div>
+      <NavButtons onNext={onNext} />
     </div>
   );
 }
