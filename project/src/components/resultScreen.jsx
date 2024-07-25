@@ -84,12 +84,27 @@ export default function ResultScreen({
         {/* <SiteLogo /> */}
         <FilmOverlay />
       </div>
-      <h2 className="pt-8 made-dillan text-white text-2xl text-center">
+      <h2 className="allenoire pt-8 made-dillan text-[#FE65C5] text-3xl text-center">
         SOUNDTRACK
       </h2>
-      <h2 className="pt-4 made-dillan text-white text-5xl text-center">
-        {`of ......... 's life`}
-      </h2>
+
+      <div className="flex flex-row space-x-4">
+        <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+          of
+        </h2>
+        <div className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+          <input
+            className="allenoire w-60 placeholder:italic placeholder:underline focus:placeholder-transparent placeholder:text-[#B9FF46] placeholder:text-4xl text-center text-4xl uppercase text-[#B9FF46] bg-transparent py-2 px-[1/2]"
+            placeholder="enter name"
+            name="input"
+            type="text"
+            maxLength="8"
+          />
+          <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+            life
+          </h2>
+        </div>
+      </div>
 
       {/* music-gen */}
       {/* <audio>
