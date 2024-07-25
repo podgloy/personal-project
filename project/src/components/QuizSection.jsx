@@ -147,9 +147,9 @@ export default function QuizSection() {
       {quizComponents.map((Quiz, i) => (
         <Quiz
           key={i}
-          className={
+          className={`overflow-hidden absolute bottom-0 left-0 h-screen w-full flex flex-col justify-between pt-6 ${
             currentQuiz === i ? "z-10" : "pointer-events-none z-0 opacity-0"
-          }
+          }`}
           id={`quiz-${i}`}
           onNext={() => next()}
           onBack={() => back()}

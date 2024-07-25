@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { EffectCards } from "swiper/modules";
 import SiteLogo from "./SiteLogo";
 import FilmOverlay from "./FilmOverlay";
+import NavButtons from "./NavButtons";
 
 const images = [
   {
@@ -42,17 +43,13 @@ export default function ColorScreen({
   }
 
   return (
-    <div
-      id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#FE6F42] flex flex-col pt-16 ${className}`}
-    >
-      {/* header */}
+    <div id={id} className={`bg-[#FE6F42]  ${className}`}>
       <div className="px-5">
+        {/* Header */}
         <FilmOverlay />
         <SiteLogo />
-
-        {/* question1 */}
-        <div className="pt-16">
+        {/* Question */}
+        <div className="py-8">
           <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             Which
           </h2>
@@ -62,58 +59,34 @@ export default function ColorScreen({
           <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold">
             most perfectly
           </h2>
-        </div>
-
-        {/* question2 */}
-        <div className="pt-9">
-          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
-            describes
-          </h2>
-          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
-            your life?
-          </h2>
-        </div>
-
-        <Swiper
-          onSwiper={setSwiper}
-          onSlideChange={() => getImageValue()}
-          effect={"cards"}
-          grabCursor={true}
-          modules={[EffectCards]}
-          className="myColorSwiper mt-16"
-        >
-          {images.map((image, i) => (
-            <SwiperSlide key={`slide-${i}`}>
-              <img className="w-full " src={image.url} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* button */}
-      <div className="">
-        <button
-          onClick={onBack}
-          className="absolute p-5 flex space-x-3 items-center"
-        >
-          <img className="w-8 rotate-180" src="/arrow2.svg" />
-          <span className="font-medium text-white"> back </span>
-        </button>
-
-        {/* footer & buttons */}
-        <div className="flex justify-between">
-          <img className="absolute left-5 bottom-16" src="dots.svg" />
-          <div className="absolute bottom-6 right-0">
-            <button
-              onClick={onNext}
-              className="p-5 flex space-x-3 items-center"
-            >
-              <div className="border-2 border-white rounded-full w-11 h-11" />
-              <img className="absolute left-4" src="/arrow8.svg" />
-            </button>
+          {/* question2 */}
+          <div className="pt-8">
+            <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
+              describes
+            </h2>
+            <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
+              your life?
+            </h2>
           </div>
         </div>
       </div>
+      {/* Card */}
+      <Swiper
+        onSwiper={setSwiper}
+        onSlideChange={() => getImageValue()}
+        effect={"cards"}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="!w-full !h-auto !max-w-[70%]"
+      >
+        {images.map((image, i) => (
+          <SwiperSlide key={`slide-${i}`} className="!h-fit">
+            <img className="w-full h-full object-contain" src={image.url} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {/* footer & buttons */}
+      <NavButtons onNext={onNext} />
     </div>
   );
 }
