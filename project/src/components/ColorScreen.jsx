@@ -66,10 +66,10 @@ export default function ColorScreen({
 
         {/* question2 */}
         <div className="pt-9">
-          <h2 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
+          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
             describes
           </h2>
-          <h2 className="made-dillan text-[#F8FFAB] text-3xl font-bold text-right">
+          <h2 className="made-dillan text-[#F8FFAB] text-4xl font-bold text-right">
             your life?
           </h2>
         </div>
@@ -80,7 +80,7 @@ export default function ColorScreen({
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          className="myColorSwiper mt-12"
+          className="myColorSwiper mt-16"
         >
           {images.map((image, i) => (
             <SwiperSlide key={`slide-${i}`}>

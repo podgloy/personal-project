@@ -88,13 +88,13 @@ export default function FontScreen({
         </div>
 
         {/* the end screen */}
-        <div className="mt-9 p-4 text-center h-56 bg-white rounded-md flex items-center justify-center">
+        <div className="mt-6 text-center h-56 bg-white rounded-md flex items-center justify-center">
           <h3 className={`text-6xl text-gray-800 ${selectedFont}`}>The End</h3>
         </div>
       </div>
 
       {/* question text */}
-      <h2 className="mt-2 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
+      <h2 className="mt-6 made-dillan text-[#C9FFC8] text-3xl font-bold text-center">
         of your life?
       </h2>
       {/* scroller */}
