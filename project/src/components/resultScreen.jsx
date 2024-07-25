@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import FilmOverlay from "./FilmOverlay";
 import SiteLogo from "./SiteLogo";
+import domtoimage from "@intactile/dom-to-image-next";
+import { saveAs } from "file-saver";
 
 export default function ResultScreen({
   className,
@@ -23,14 +25,17 @@ export default function ResultScreen({
       audio.play();
     }
   }, [isActive]);
-  // video recording
+  // video recording [faied on mobile]
   const [recorder, setRecorder] = useState(null);
   const [displayMedia, setDisplayMedia] = useState(null);
   const startScreenRecording = async () => {
+    alert("click");
+
     try {
       // Prompt the user to select a screen or window to share
       const stream = await navigator.mediaDevices.getDisplayMedia({
         video: { mediaSource: "screen" },
+        audio: true,
       });
 
       const newRecorder = new MediaRecorder(stream);
@@ -70,15 +75,23 @@ export default function ResultScreen({
         newRecorder.stop();
       }, 10000); // 10 seconds
     } catch (err) {
+      alert(err, "error");
       console.error("Error: " + err);
     }
   };
+  // screen capture
+  function captureToFile() {
+    domtoimage
+      .toBlob(document.querySelector(".capture-screen"))
+      .then((blob) => window.saveAs(blob, "my-screen.png"));
+  }
+
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
+      className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] bg-contain flex flex-col pt-16 ${className}`}
     >
-      <button onClick={startScreenRecording}>Start 10s Screen Recording</button>
+      <button onClick={captureToFile}>captureToFile</button>
       {/* header */}
       <div className="px-5">
         {/* <SiteLogo /> */}
