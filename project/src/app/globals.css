@@ -62,11 +62,11 @@ body {
 .myGenreSwiper {
   height: 361px;
   .slide-frame{
-    @apply opacity-0 duration-300;
+    @apply opacity-0 duration-500;
   }
   .swiper-slide-active{
     .slide-frame{
-      @apply !opacity-100 duration-300;
+      @apply !opacity-100 duration-500;
     }
   }
 }
@@ -164,5 +164,19 @@ body {
   font-style: normal;
 }
 
+/* animation */
+.animate-spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
 
-
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}

@@ -31,8 +31,9 @@ export default function LoadingScreen({
   return (
     <div id={id} className={`bg-[#FAF460] ${className}`}>
       <div className="px-5 h-full">
-        <FilmOverlay addedClass="!opacity-30 !mix-blend-normal" />
+        <FilmOverlay addedClass="!opacity-100 !mix-blend-overlay" />
         <SiteLogo />
+
         {/* State */}
         <div className="py-12 flex flex-col items-center justify-center space-y-8 h-full">
           {/* Title */}
@@ -43,11 +44,13 @@ export default function LoadingScreen({
               on the way...
             </span>
           </h2>
+
           {/* vinyl image */}
           <img
-            className="place-self-center w-[80%] object-contain"
+            className="animate-spin place-self-center w-[80%] object-contain"
             src="/vinyl.png"
           />
+
           {/* loading bar */}
           <div className="flex flex-col items-center w-full px-8">
             {/* loading progress bar */}
@@ -57,6 +60,7 @@ export default function LoadingScreen({
                 className="absolute h-full w-60 left-0 bg-zinc-700 rounded-full"
               />
             </div>
+
             {/* Loading number */}
             <h2 className="made-dillan text-[#0A59CE] text-3xl text-center mt-4">
               {loadingPercentage}%

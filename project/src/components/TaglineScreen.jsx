@@ -49,7 +49,7 @@ export default function TaglineScreen({
       <div className="px-5 h-full">
         {/* placeholder */}
         <input
-          className=" made-dillan placeholder:italic placeholder:text-white placeholder:opacity-70 placeholder:text-2xl tracking-wider text-center text-2xl block bg-transparent w-full border border-white rounded-md py-4 px-[1/2] focus:border-[#00CCFD]"
+          className=" made-dillan placeholder:italic placeholder:text-white placeholder:opacity-70 placeholder:text-2xl tracking-wider text-center text-2xl block bg-transparent w-full border border-white rounded-md py-4 px-[1/2]"
           placeholder="type something..."
           name="input"
           type="text"

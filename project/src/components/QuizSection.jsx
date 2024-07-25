@@ -89,6 +89,7 @@ export default function QuizSection() {
     answers[name] = val;
     setAnswers(answers);
   }
+
   // Submit answers to API
   useEffect(() => {
     if (currentQuiz === 4) {

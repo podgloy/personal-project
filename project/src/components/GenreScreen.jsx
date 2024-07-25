@@ -95,10 +95,10 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
           <SwiperSlide key={`slide-${i}`} className="relative">
             <img className="h-full w-full object-cover" src={image.url} />
             <div className="slide-frame absolute top-0 left-0 w-full h-full z-10">
-              <div className="top-4 left-4 w-8 h-8 border-white border-2 absolute"></div>
-              <div className="top-4 right-4 w-8 h-8 border-white border-2 absolute"></div>
-              <div className="bottom-4 left-4 w-8 h-8 border-white border-2 absolute"></div>
-              <div className="bottom-4 right-4 w-8 h-8 border-white border-2 absolute"></div>
+              <div className="top-4 left-4 w-6 h-6 border-[white] border-l-2 border-t-2 absolute"></div>
+              <div className="top-4 right-4 w-6 h-6 border-white border-r-2 border-t-2 absolute"></div>
+              <div className="bottom-4 left-4 w-6 h-6 border-white border-l-2 border-b-2 absolute"></div>
+              <div className="bottom-4 right-4 w-6 h-6 border-white border-r-2 border-b-2 absolute"></div>
             </div>
           </SwiperSlide>
         ))}

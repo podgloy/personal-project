@@ -92,7 +92,7 @@ export default function FontScreen({
           className="text-center h-full rounded-md flex items-center justify-center mx-5 bg-cover"
           style={{ backgroundImage: 'url("/cinema.png")' }}
         >
-          <h3 className={`text-6xl ${selectedFont} text-[#FFCEB9] bolder`}>
+          <h3 className={`text-6xl ${selectedFont} text-[#FFD3AA] bolder`}>
             The End
           </h3>
         </div>
