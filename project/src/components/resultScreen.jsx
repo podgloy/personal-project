@@ -84,13 +84,16 @@ export default function ResultScreen({
     domtoimage
       .toBlob(document.querySelector(".capture-screen"))
       .then((blob) => {
-        // Save the image file
-        window.saveAs(blob, "my-screen.png");
-        // Add a slight delay to ensure the file save dialog appears before navigating
-        setTimeout(() => {
-          // Navigate to Instagram story camera
-          window.location.href = "instagram://story-camera";
-        }, 500); // Adjust the delay as needed
+        // Save the image file and return a promise
+        return new Promise((resolve, reject) => {
+          window.saveAs(blob, "my-screen.png");
+          // Resolve the promise after a short delay to ensure the file save dialog appears
+          setTimeout(resolve, 1000); // Adjust the delay as needed
+        });
+      })
+      .then(() => {
+        // Navigate to Instagram story camera
+        window.location.href = "instagram://story-camera";
       })
       .catch((error) => {
         console.error("An error occurred while capturing the screen:", error);
