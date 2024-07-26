@@ -123,7 +123,7 @@ export default function ResultScreen({
       </div>
 
       {/* music-gen */}
-      <audio id="audio"></audio>
+      <audio id="audio" loop preload="none"></audio>
       {/* image-gen */}
       <div className="relative w-full">
         <img
