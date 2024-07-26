@@ -87,6 +87,7 @@ export default function ResultScreen({
 
   // screen capture
   function captureToFile() {
+    console.log("click");
     domtoimage
       .toBlob(document.querySelector(".capture-screen"))
       .then((blob) => {
