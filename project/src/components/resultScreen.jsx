@@ -111,19 +111,19 @@ export default function ResultScreen({
   let shareTitle = "Soundtrack of Life";
   let socials = [
     {
-      text: "facebook",
+      icon: "/icon/facebookIcon.png",
       link: `https://www.facebook.com/sharer/sharer.php?u=${shareURL}&t=${shareTitle}`,
     },
     {
-      text: "facebook messenger",
+      icon: "/icon/messengerIcon.png",
       link: `https://www.addtoany.com/add_to/facebook_messenger?linkurl=${shareURL}&linkname=${shareTitle}&linknote=${shareTitle}`,
     },
     {
-      text: "twitter",
+      icon: "/icon/twitterIcon.png",
       link: `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareURL}`,
     },
     {
-      text: "line",
+      icon: "/icon/lineIcon.png",
       link: `https://social-plugins.line.me/lineit/share?url=https://${shareURL}`,
     },
   ];
@@ -133,15 +133,24 @@ export default function ResultScreen({
       id={id}
       className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
     >
-      {/* <button onClick={captureToFile}>share result to instagram</button> */}
-      {socials.map((social, index) => (
-        <Link key={index} href={social.link} target="_blank">
-          {`${social.text} >>`}
-        </Link>
-      ))}
+      <div className="flex items-center space-x-4 justify-end">
+        {socials.map((social, index) => (
+          <Link key={index} href={social.link} target="_blank">
+            {/* {`${social.icon} `} */}
+            <img className="size-8" src={`${social.icon} `} />
+          </Link>
+        ))}
+      </div>
       {/* header */}
 
       <FilmOverlay />
+
+      {/* share link */}
+      <div>
+        <button>
+          <img src="" />
+        </button>
+      </div>
 
       <h2 className="allenoire pt-4 made-dillan text-[#FE65C5] text-3xl text-center">
         SOUNDTRACK
@@ -166,13 +175,6 @@ export default function ResultScreen({
       </div>
 
       {/* music-gen */}
-      {/* <audio>
-        <source
-          src="https://file-examples.com/storage/fec56f7158669f77293e4db/2017/11/file_example_MP3_700KB.mp3"
-          type="audio/mpeg"
-        />
-      </audio> */}
-
       <audio>
         <source src={musicResult} type="audio/mpeg" />
       </audio>
@@ -193,8 +195,8 @@ export default function ResultScreen({
       {/* share & download */}
       <button onClick={captureToFile} className="flex justify-center">
         <div className="button-shadow absolute right-32 bottom-16 h-7 w-9 bg-[#FE65C5] rounded-full" />
-        <p className="absolute allenoire bottom-8 right-32 text-sm text-center">
-          SHARE
+        <p className="absolute allenoire bottom-8 right-28 text-sm text-center">
+          IG STORY
         </p>
       </button>
       <button onClick={handleRestart} className="content-center">
