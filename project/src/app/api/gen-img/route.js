@@ -18,7 +18,7 @@ export async function POST(req) {
       input: {
         width: 1024,
         height: 1024,
-        prompt: `bright and vivid abstract image that embodies the essence of ${genre} with ${color} and ${font}, inspired by the word ${tagline}'`,
+        prompt: `bright and vivid abstract image that embodies the essence of ${genre} with ${color} vibes and ${font}style, inspired by the word ${tagline}'`,
         scheduler: "K_EULER",
         num_outputs: 1,
         guidance_scale: 0,

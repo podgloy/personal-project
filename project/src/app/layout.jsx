@@ -31,7 +31,7 @@ const Dancing_ScriptFont = Dancing_Script({
 });
 export const metadata = {
   title: "SOUNDTRACK of life",
-  description: "If your life were a movie, what genre would it belong to?",
+  description: "If your life were a movie, what would your soundtrack be?",
   icons: {
     icon: "favicon.ico",
   },
