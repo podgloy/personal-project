@@ -20,7 +20,7 @@ export async function POST(req) {
         top_k: 250,
         top_p: 0,
         prompt: `Create a ${genre} track with ${color} vibes and ${font} style, inspired by the word '${tagline}'`,
-        duration: 8,
+        duration: 4,
         temperature: 1,
         continuation: false,
         model_version: "stereo-large",
