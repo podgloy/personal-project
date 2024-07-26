@@ -118,7 +118,7 @@ export default function ResultScreen({
           />
         </div>
         <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
-          life
+          {`'s life`}
         </h2>
       </div>
 
