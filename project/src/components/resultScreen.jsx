@@ -87,6 +87,7 @@ export default function ResultScreen({
 
   // screen capture
   function captureToFile() {
+    console.log("click");
     domtoimage
       .toBlob(document.querySelector(".capture-screen"))
       .then((blob) => {
@@ -130,7 +131,7 @@ export default function ResultScreen({
   return (
     <div
       id={id}
-      className={`absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
+      className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
     >
       {/* <button onClick={captureToFile}>share result to instagram</button> */}
       {socials.map((social, index) => (
