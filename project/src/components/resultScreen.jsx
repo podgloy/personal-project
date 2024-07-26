@@ -18,14 +18,15 @@ export default function ResultScreen({
   // audio
   useEffect(() => {
     const audio = document.querySelector("audio");
-    if (!audio || !musicResult) return;
-    if (isActive) {
-      setTimeout(() => {
-        audio.play();
-        audio.play();
-      }, 1000);
-    } else {
-      audio.pause();
+    if (audio && musicResult) {
+      audio.src = musicResult; // Ensure the audio source is updated
+      if (isActive) {
+        audio.play().catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+      } else {
+        audio.pause();
+      }
     }
   }, [isActive, musicResult]);
 
@@ -90,7 +91,6 @@ export default function ResultScreen({
 
   // screen capture
   function captureToFile() {
-    console.log("click");
     domtoimage
       .toBlob(document.querySelector(".capture-screen"))
       .then((blob) => {
@@ -178,11 +178,7 @@ export default function ResultScreen({
       </div>
 
       {/* music-gen */}
-
-      <audio>
-        <source src={`${musicResult}`} type="audio/mpeg" />
-      </audio>
-
+      <audio id="audio"></audio>
       {/* image-gen */}
       <div className="relative w-full">
         <img
