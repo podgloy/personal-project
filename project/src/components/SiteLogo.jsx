@@ -8,10 +8,10 @@ const SiteLogo = ({ className }) => {
   return (
     <Image
       onClick={handleClick}
-      src="/stol-logo.png"
+      src="/stol-logo.svg"
       alt="Logo Image"
-      width="120"
-      height="60"
+      width="40"
+      height="40"
       className={className}
     />
   );
