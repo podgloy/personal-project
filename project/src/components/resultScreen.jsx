@@ -12,23 +12,22 @@ export default function ResultScreen({
   id,
   onBack,
   imageResult,
-  musicResult,
+  musicResult = "",
   isActive,
 }) {
-  // audio
-  useEffect(() => {
-    const audio = document.querySelector("audio");
-    if (audio && musicResult) {
-      audio.src = musicResult; // Ensure the audio source is updated
-      if (isActive) {
-        audio.play().catch((error) => {
-          console.error("Error playing audio:", error);
-        });
-      } else {
-        audio.pause();
-      }
-    }
-  }, [isActive, musicResult]);
+  // useEffect(() => {
+  // const audio = document.querySelector("audio");
+  // if (audio && musicResult) {
+  //   audio.src = musicResult; // Ensure the audio source is updated
+  //   if (isActive) {
+  //     audio.play().catch((error) => {
+  //       console.error("Error playing audio:", error);
+  //     });
+  //   } else {
+  //     audio.pause();
+  //   }
+  // }
+  // }, [isActive, musicResult]);
 
   const handleRestart = () => {
     window.location.reload();
@@ -123,7 +122,15 @@ export default function ResultScreen({
       </div>
 
       {/* music-gen */}
-      <audio id="audio" loop preload="none"></audio>
+      <audio
+        controls
+        id="audio"
+        loop
+        preload="none"
+        className="absolute bottom-9 w-40 left-4 z-50"
+      >
+        <source src={musicResult} type="audio/mpeg"></source>
+      </audio>
       {/* image-gen */}
       <div className="relative w-full">
         <img
