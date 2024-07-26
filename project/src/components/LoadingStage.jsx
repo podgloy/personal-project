@@ -47,7 +47,7 @@ export default function LoadingScreen({
 
           {/* vinyl image */}
           <img
-            className="animate-spin place-self-center w-[80%] object-contain"
+            className="place-self-center w-[80%] object-contain"
             src="/vinyl.png"
           />
 

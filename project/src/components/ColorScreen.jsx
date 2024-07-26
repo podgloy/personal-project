@@ -24,13 +24,7 @@ const images = [
   { url: "/color/purple.svg", answer: ["mysterious", "luxurious", "creative"] },
 ];
 
-export default function ColorScreen({
-  className,
-  id,
-  onBack,
-  onNext,
-  onSelect,
-}) {
+export default function ColorScreen({ className, id, onNext, onSelect }) {
   const [swiper, setSwiper] = useState(null);
   useEffect(() => {
     onSelect("color", images[0].answer);

@@ -22,9 +22,10 @@ export default function FontScreen({
 
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
-    const selectedImage = fonts[activeIndex];
-    onSelect("font", selectedImage.answer);
+    const selectedFont = fonts[activeIndex];
+    onSelect("font", selectedFont.answer);
   }
+
   const fonts = [
     {
       text: "Script",
