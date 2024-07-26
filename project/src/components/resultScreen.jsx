@@ -133,11 +133,11 @@ export default function ResultScreen({
       id={id}
       className={`capture-screen absolute bottom-0 left-0 h-screen w-full bg-[#155FCB] ${className}`}
     >
-      <div className="flex items-center space-x-4 justify-end">
+      <div className="px-5 flex items-center space-x-3 justify-end">
         {socials.map((social, index) => (
           <Link key={index} href={social.link} target="_blank">
             {/* {`${social.icon} `} */}
-            <img className="size-8" src={`${social.icon} `} />
+            <img className="size-5" src={`${social.icon} `} />
           </Link>
         ))}
       </div>
@@ -152,15 +152,15 @@ export default function ResultScreen({
         </button>
       </div>
 
-      <h2 className="allenoire pt-4 made-dillan text-[#FE65C5] text-3xl text-center">
+      <h2 className="allenoire pt-3 made-dillan text-[#FE65C5] text-3xl text-center">
         SOUNDTRACK
       </h2>
 
       <div className="flex flex-row justify-center">
-        <h2 className="allenoire pt-4 made-dillan text-white text-3xl text-center">
+        <h2 className="allenoire pt-3 made-dillan text-white text-3xl text-center">
           of
         </h2>
-        <div className="allenoire pt-2 made-dillan text-white text-3xl text-center">
+        <div className="allenoire pt-1 made-dillan text-white text-3xl text-center">
           <input
             className="allenoire w-44 placeholder:italic placeholder:underline focus:placeholder-transparent placeholder:text-[#B9FF46] placeholder:text-4xl text-center text-4xl uppercase text-[#B9FF46] bg-transparent py-1 px-[1/2]"
             placeholder="your...."
@@ -185,11 +185,11 @@ export default function ResultScreen({
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
           src={imageResult}
         />
-        {/* <img
+        <img
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
           src="/catttt.png"
-        /> */}
-        <img className="relative z-0 pr-6 w-full" src="/resultVinyl.png" />
+        />
+        <img className="relative z-0  w-[90vw]" src="/vinylresult.png" />
       </div>
 
       {/* share & download */}
