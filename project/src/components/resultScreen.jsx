@@ -18,14 +18,17 @@ export default function ResultScreen({
   // audio
   useEffect(() => {
     const audio = document.querySelector("audio");
-    if (!isActive) {
-      audio.pause();
-      return;
+    if (!audio || !musicResult) return;
+    if (isActive) {
+      setTimeout(() => {
+        audio.play();
+        audio.play();
+      }, 1000);
     } else {
-      console.log(audio);
-      audio.play();
+      audio.pause();
     }
-  }, [isActive]);
+  }, [isActive, musicResult]);
+
   // video recording [faied on mobile]
   const [recorder, setRecorder] = useState(null);
   const [displayMedia, setDisplayMedia] = useState(null);
@@ -175,8 +178,9 @@ export default function ResultScreen({
       </div>
 
       {/* music-gen */}
+
       <audio>
-        <source src={musicResult} type="audio/mpeg" />
+        <source src={`${musicResult}`} type="audio/mpeg" />
       </audio>
 
       {/* image-gen */}
@@ -185,10 +189,10 @@ export default function ResultScreen({
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
           src={imageResult}
         />
-        <img
+        {/* <img
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
           src="/catttt.png"
-        />
+        /> */}
         <img className="relative z-0  w-[90vw]" src="/vinylresult.png" />
       </div>
 

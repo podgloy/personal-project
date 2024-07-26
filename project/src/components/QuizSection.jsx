@@ -139,7 +139,7 @@ export default function QuizSection() {
       setTimeout(() => {
         setIsLoading(false);
         next();
-      }, 5000);
+      }, 10000);
     }
   }, [currentQuiz, answers]);
 
