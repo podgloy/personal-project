@@ -140,9 +140,7 @@ export default function ResultScreen({
       {/* share & download */}
       <button
         onClick={captureToFile}
-        className={`flex flex-col items-center space-y-2 absolute right-28 bottom-8 z-20 ${
-          musicResult ? "" : "pointer-events-none grayscale"
-        }`}
+        className={`flex flex-col items-center space-y-2 absolute right-28 bottom-8 z-20 `}
       >
         <div className="button-shadow h-7 w-9 bg-[#FE65C5] rounded-full" />
         <p className="allenoire text-sm text-center">IG STORY</p>
