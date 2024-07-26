@@ -24,7 +24,7 @@ export default function LoadingScreen({
         clearInterval(interval);
         onSelect();
       }
-    }, 100);
+    }, 200);
     return () => clearInterval(interval);
   }, [isActive]);
 

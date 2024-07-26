@@ -134,13 +134,13 @@ export default function ResultScreen({
           className="absolute animate-spin -left-[7vw] mt-32 z-0 w-[65vw]"
           src="/catttt.png"
         /> */}
-        <img className="relative z-0  w-[90vw]" src="/vinylresult.png" />
+        <img className="relative z-10  w-[90vw]" src="/vinylresult.png" />
       </div>
 
       {/* share & download */}
       <button
         onClick={captureToFile}
-        className={`flex flex-col items-center space-y-2 absolute right-28 bottom-8 ${
+        className={`flex flex-col items-center space-y-2 absolute right-28 bottom-8 z-20 ${
           musicResult ? "" : "pointer-events-none grayscale"
         }`}
       >
@@ -149,7 +149,7 @@ export default function ResultScreen({
       </button>
       <button
         onClick={handleRestart}
-        className="content-center flex flex-col items-center space-y-2 absolute right-8 bottom-8"
+        className="content-center flex flex-col items-center space-y-2 absolute right-8 bottom-8 z-20"
       >
         <div className="button-shadow  h-7 w-9 bg-[#FE65C5] rounded-full" />
         <p className="allenoire text-sm text-center">RESTART</p>

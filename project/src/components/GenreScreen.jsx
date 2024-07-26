@@ -18,7 +18,7 @@ export default function GenreScreen({ className, id, onNext, onSelect }) {
   function getImageValue() {
     const activeIndex = swiper.activeIndex;
     const selectedImage = images[activeIndex];
-    onSelect("genre", selectedImage.answer);
+    onSelect("genre", selectedImage.answers);
   }
 
   const images = [
