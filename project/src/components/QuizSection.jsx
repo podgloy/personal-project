@@ -128,24 +128,6 @@ export default function QuizSection() {
             font,
             tagline,
           });
-          // .then((response) => response.blob())
-          // .then((blob) => {
-          //   window.saveAs(blob, "my-music.mp3");
-          //   // Resolve the promise after a short delay to ensure the file save dialog appears
-          //   return new Promise((resolve, reject) => {
-          //     setTimeout(resolve, 1000); // Adjust the delay as needed
-          //   });
-          // })
-          // .then(() => {
-          //   // Navigate to Instagram story camera
-          //   window.location.href = "instagram://story-camera";
-          // })
-          // .catch((error) => {
-          //   console.error(
-          //     "An error occurred while saving the music file:",
-          //     error
-          //   );
-          // });
           setMusicResult(response.data.answer);
         } catch (error) {
           console.error("Error creating music:", error);
