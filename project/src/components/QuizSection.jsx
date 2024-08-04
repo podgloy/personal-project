@@ -17,11 +17,11 @@ export default function QuizSection() {
 
   const [isLoading, setIsLoading] = useState(false);
   const quizComponents = [
-    GenreScreen,
-    ColorScreen,
-    FontScreen,
-    TaglineScreen,
-    LoadingStage,
+    // GenreScreen,
+    // ColorScreen,
+    // FontScreen,
+    // TaglineScreen,
+    // LoadingStage,
     ResultScreen,
   ];
   function next() {
